@@ -38,7 +38,7 @@ if selected == "Regions":
           st.write("The great majority of Ontario's population and arable land is in Southern Ontario. In contrast, Northern Ontario is sparsely populated with cold winters and heavy forestation")
           st.write("Official website: https://www.ontario.ca/") 
           url='https://github.com/Nishanth91/Petproject/blob/main/csv/Ont.csv'
-          df = pd.read_csv(url,index_col=0))
+          df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in Ontario!")  # add a title
           st.write(df)
       with tab2:

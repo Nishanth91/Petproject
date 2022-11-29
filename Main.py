@@ -37,7 +37,7 @@ if selected == "Regions":
           st.write("Ontario is bordered by the province of Manitoba to the west, Hudson Bay and James Bay to the north, and Quebec to the east and northeast, and to the south by the U.S. states of (from west to east) Minnesota, Michigan, Ohio, Pennsylvania, and New York. Almost all of Ontario's 2,700 km (1,678 mi) border with the United States follows inland waterways: from the westerly Lake of the Woods, eastward along the major rivers and lakes of the Great Lakes/Saint Lawrence River drainage system. There is only about 1 km (0.6 mi) of actual land border, made up of portages including Height of Land Portage on the Minnesota border")
           st.write("The great majority of Ontario's population and arable land is in Southern Ontario. In contrast, Northern Ontario is sparsely populated with cold winters and heavy forestation")
           st.write("Official website: https://www.ontario.ca/") 
-          df = pd.read_csv("Petproject/csv/Ont.csv")
+          df = pd.read_csv("Nishanth91/Petproject/csv/Ont.csv")
           st.title("Top 10 cities in Ontario!")  # add a title
           st.write(df)
       with tab2:

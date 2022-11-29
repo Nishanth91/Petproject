@@ -52,7 +52,7 @@ if selected == "Regions":
           Manitoba's capital and largest city is Winnipeg, the seventh most populous municipality in Canada. Winnipeg is the seat of government, home to the Legislative Assembly of Manitoba and the Provincial Court. Four of the province's five universities, all four of its professional sports teams, and most of its cultural activities (including Festival du Voyageur and Folklorama) are located in Winnipeg. The city has train and bus stations and an international airport; a Canadian Forces base, CFB Winnipeg, operates from the airport and is the regional headquarters of the North American Aerospace Defense Command. 
           """
           st.write("Official website: https://www.gov.mb.ca/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Mab.csv")
+          df = pd.read_csv("csv/Mab.csv")
           st.title("Top 10 cities in Manitoba!")  # add a title
           st.write(df)
       with tab3:

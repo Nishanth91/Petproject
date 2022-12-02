@@ -350,7 +350,7 @@ if selected == "IT Calculator":
 
 if selected == "About Me":
     st.subheader("Do you like my website?")
-    select = st.radio("Yes","No","Maybe")
+    select = st.radio("Do you like my website?",('Yes','No','Maybe'))
     if select == "Yes":
         st.write("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
     if select == "No":

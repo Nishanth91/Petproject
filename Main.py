@@ -348,7 +348,17 @@ if selected == "IT Calculator":
 
 
 if selected == "About Me":
-    st.header(":mailbox: Get In Touch With Me!")
+    import emoji
+    st.subheader("Do you like my website?")
+    choice = st.radio("Yes","No","Maybe")
+     if choice == "Yes":
+         st.write("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
+     elif choice == "No":
+         st.write("\N{grinning face} Sorry to know! We will try our best to improve this project") 
+     else:
+         st.write("Feel free to write to me and share your experience & improvements")
+    
+    st.subheader(":mailbox: Get In Touch With Me!")
     contact_form = """
     <form action="https://formsubmit.co/NISHANTH91.DBA@GMAIL.COM" method="POST">
         <input type="hidden" name="_captcha" value="false">
@@ -358,7 +368,7 @@ if selected == "About Me":
         <button type="submit">Send</button>
     </form>
     """
-
+    
     st.markdown(contact_form, unsafe_allow_html=True)
 
     # Use Local CSS File
@@ -366,5 +376,6 @@ if selected == "About Me":
         with open(file_name) as f:
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-
     local_css("style/style.css")
+    
+    

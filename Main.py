@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import os
+import emoji
 st. set_page_config(layout="wide")
 import math
 from streamlit_option_menu import option_menu
@@ -348,15 +349,14 @@ if selected == "IT Calculator":
 
 
 if selected == "About Me":
-    import emoji
     st.subheader("Do you like my website?")
     select = st.radio("Yes","No","Maybe")
-        if select == "Yes":
-            st.write("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
-        elif select == "No":
-            st.write("\N{grinning face} Sorry to know! We will try our best to improve this project") 
-        else:
-            st.write("Feel free to write to me and share your experience & improvements")
+    if select == "Yes":
+        st.write("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
+    if select == "No":
+        st.write("\N{grinning face} Sorry to know! We will try our best to improve this project") 
+    if select =="Maybe":
+        st.write("Feel free to write to me and share your experience & improvements")
         
     st.subheader(":mailbox: Get In Touch With Me!")
     contact_form = """

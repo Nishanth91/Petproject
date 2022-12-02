@@ -200,9 +200,10 @@ if selected == "Regions":
           st.header("Nova Scotia")  
           col1, col2 = st.columns([2,2])
           with col1:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/1920px-Flag_of_Newfoundland_and_Labrador.svg.png",width=500)
-          with col2:            
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Nova_Scotia_in_Canada_2.svg/1024px-Nova_Scotia_in_Canada_2.svg.png",width=400)
+          with col2:  
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/1920px-Flag_of_Newfoundland_and_Labrador.svg.png",width=500)
+            
           """
           Newfoundland and Labrador (/njuːfənˈlænd  ...  læbrəˈdɔːr/; frequently abbreviated as NL) is the easternmost province of Canada, in the country's Atlantic region. The province comprises the island of Newfoundland and the continental region of Labrador, having a total size of 405,212 square kilometres (156,500 sq mi). In 2021, the population of Newfoundland and Labrador was estimated to be 521,758. The island of Newfoundland (and its smaller neighbouring islands) is home to around 94 per cent of the province's population, with more than half residing in the Avalon Peninsula.
 

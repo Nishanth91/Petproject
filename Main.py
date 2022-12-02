@@ -33,7 +33,7 @@ if selected == "Regions":
           st.header("Ontario")
           col1, col2 = st.columns([2,2])
           with col2: 
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Ontario.svg/1920px-Flag_of_Ontario.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Ontario.svg/1920px-Flag_of_Ontario.svg.png",width=400)
           with col1:  
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Ontario_in_Canada_2.svg/1024px-Ontario_in_Canada_2.svg.png", width=400)
           st.write("Ontario is one of the thirteen provinces and territories of Canada. Located in Central Canada, it is Canada's most populous province, with 38.3 percent of the country's population, and is the second-largest province by total area (after Quebec).Ontario is Canada's fourth-largest jurisdiction in total area when the territories of the Northwest Territories and Nunavut are included. It is home to the nation's capital city, Ottawa, and the nation's most populous city, Toronto, which is Ontario's provincial capital.")
@@ -48,7 +48,7 @@ if selected == "Regions":
           st.header("Manitoba") 
           col1, col2 = st.columns([2,2])  
           with col2:  
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Flag_of_Manitoba.svg/1920px-Flag_of_Manitoba.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Flag_of_Manitoba.svg/1920px-Flag_of_Manitoba.svg.png",width=400)
           with col1:  
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Manitoba_in_Canada_2.svg/800px-Manitoba_in_Canada_2.svg.png",width=400)
           """
@@ -67,7 +67,7 @@ if selected == "Regions":
           st.header("Saskatchewan")   
           col1, col2 = st.columns([2,2])
           with col2:                        
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Flag_of_Saskatchewan.svg/1920px-Flag_of_Saskatchewan.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Flag_of_Saskatchewan.svg/1920px-Flag_of_Saskatchewan.svg.png",width=400)
           with col1:
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Saskatchewan_in_Canada_2.svg/1024px-Saskatchewan_in_Canada_2.svg.png",width=400)
           """
@@ -90,7 +90,7 @@ if selected == "Regions":
           st.header("Alberta")  
           col1, col2 = st.columns([2,2])
           with col2:                         
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Flag_of_Alberta.svg/1920px-Flag_of_Alberta.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Flag_of_Alberta.svg/1920px-Flag_of_Alberta.svg.png",width=400)
           with col1:
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Alberta_in_Canada_2.svg/1024px-Alberta_in_Canada_2.svg.png",width=400)
           """
@@ -115,7 +115,7 @@ if selected == "Regions":
           st.header("British Columbia")  
           col1, col2 = st.columns([2,2])
           with col2:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Flag_of_British_Columbia.svg/800px-Flag_of_British_Columbia.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Flag_of_British_Columbia.svg/800px-Flag_of_British_Columbia.svg.png",width=400)
           with col1:  
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/British_Columbia_in_Canada_2.svg/1024px-British_Columbia_in_Canada_2.svg.png",width=400)
           """
@@ -136,7 +136,7 @@ if selected == "Regions":
           st.header("Quebec")  
           col1, col2 = st.columns([2,2])
           with col2:                                   
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Flag_of_Quebec.svg/1280px-Flag_of_Quebec.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Flag_of_Quebec.svg/1280px-Flag_of_Quebec.svg.png",width=400)
           with col1:
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Quebec_in_Canada_2.svg/1024px-Quebec_in_Canada_2.svg.png",width=400)
           """
@@ -157,7 +157,7 @@ if selected == "Regions":
           st.header("Prince Edward Island")   
           col1, col2 = st.columns([2,2])
           with col2:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flag_of_Prince_Edward_Island.svg/1280px-Flag_of_Prince_Edward_Island.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flag_of_Prince_Edward_Island.svg/1280px-Flag_of_Prince_Edward_Island.svg.png",width=400)
           with col1:
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Prince_Edward_Island_in_Canada_%28special_marker%29_2.svg/1024px-Prince_Edward_Island_in_Canada_%28special_marker%29_2.svg.png",width=400)
           """
@@ -178,7 +178,7 @@ if selected == "Regions":
           st.header("New Brunswick")  
           col1, col2 = st.columns([2,2])
           with col2: 
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Flag_of_New_Brunswick.svg/1280px-Flag_of_New_Brunswick.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Flag_of_New_Brunswick.svg/1280px-Flag_of_New_Brunswick.svg.png",width=400)
           with col1:  
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/New_Brunswick_in_Canada_2.svg/1024px-New_Brunswick_in_Canada_2.svg.png",width=400)
           """
@@ -205,7 +205,7 @@ if selected == "Regions":
           st.header("Newfoundland and Labrador")  
           col1, col2 = st.columns([2,2])
           with col2: 
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/1920px-Flag_of_Newfoundland_and_Labrador.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/1920px-Flag_of_Newfoundland_and_Labrador.svg.png",width=400)
           with col1:  
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Newfoundland_and_Labrador_in_Canada_2.svg/1024px-Newfoundland_and_Labrador_in_Canada_2.svg.png",width=400)
           """
@@ -229,7 +229,7 @@ if selected == "Regions":
           with col1:
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Nova_Scotia_in_Canada_2.svg/1024px-Nova_Scotia_in_Canada_2.svg.png",width=400)
           with col2:  
-            st.image("hhttps://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Nova_Scotia_flag.svg/800px-Nova_Scotia_flag.svg.png",width=500)
+            st.image("hhttps://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Nova_Scotia_flag.svg/800px-Nova_Scotia_flag.svg.png",width=400)
             
           """
           Nova Scotia (/ˌnoʊvə ˈskoʊʃə/ NOH-və SKOH-shə; French: Nouvelle-Écosse; Scottish Gaelic: Alba Nuadh) is one of the thirteen provinces and territories of Canada. It is one of the three Maritime provinces and one of the four Atlantic provinces. Nova Scotia is Latin for "New Scotland".
@@ -252,9 +252,9 @@ if selected == "Regions":
           st.header("Nunavut") 
           col1, col2 = st.columns([2,2])
           with col2:  
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Flag_of_Nunavut.svg/1280px-Flag_of_Nunavut.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Flag_of_Nunavut.svg/1280px-Flag_of_Nunavut.svg.png",width=400)
           with col1:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Nunavut_in_Canada_2.svg/1024px-Nunavut_in_Canada_2.svg.png",width=400)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Nunavut_in_Canada_2.svg/1024px-Nunavut_in_Canada_2.svg.png",width=450)
           """
           Nunavut (/ˈnʊnəvʊt/ NUU-nə-vuut, /ˈnuːnəvuːt/ NOO-nə-voot; Inuktitut: ᓄᓇᕗᑦ [nunaˈvut], lit. 'our land'; French: [nunavut]) is the largest and northernmost territory of Canada. It was separated officially from the Northwest Territories on April 1, 1999, via the Nunavut Act and the Nunavut Land Claims Agreement Act which provided this territory to the Inuit for independent government. The boundaries had been drawn in 1993. The creation of Nunavut resulted in the first major change to Canada's political map in half a century since the province of Newfoundland was admitted in 1949.
 
@@ -273,7 +273,7 @@ if selected == "Regions":
           st.header("Northwest Territories")  
           col1, col2 = st.columns([2,2]) 
           with col2:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_the_Northwest_Territories.svg/1920px-Flag_of_the_Northwest_Territories.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_the_Northwest_Territories.svg/1920px-Flag_of_the_Northwest_Territories.svg.png",width=400)
           with col1:
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Northwest_Territories_in_Canada_2.svg/1024px-Northwest_Territories_in_Canada_2.svg.png",width=400)
           """
@@ -292,7 +292,7 @@ if selected == "Regions":
           st.header("Yukon")   
           col1, col2 = st.columns([2,2])
           with col2:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_Yukon.svg/1920px-Flag_of_Yukon.svg.png",width=500)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_Yukon.svg/1920px-Flag_of_Yukon.svg.png",width=400)
           with col1:
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Yukon_in_Canada_2.svg/1024px-Yukon_in_Canada_2.svg.png",width=400)
           """

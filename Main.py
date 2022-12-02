@@ -15,7 +15,7 @@ with st.sidebar:
   selected = option_menu(
    menu_title="Main Menu",
    options=["Canada","Regions","IT Calculator","Feedback","About Me"],
-   icons=["sunrise","signpost-2","calculator","mailbox"],
+   icons=["sunrise","signpost-2","calculator","mailbox","person"],
    menu_icon="shop",
    default_index=0,
   )
@@ -391,7 +391,7 @@ if selected == "Feedback":
     local_css("style/style.css")
     
 if selected == "About Me":
-     st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish.jpg")   
-
+     st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish.jpg",width=200)   
+     
     
     

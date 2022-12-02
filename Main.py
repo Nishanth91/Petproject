@@ -15,7 +15,7 @@ with st.sidebar:
   selected = option_menu(
    menu_title="Main Menu",
    options=["Canada","Regions","IT Calculator","Feedback","About Me"],
-   icons=["sunrise","signpost-2","calculator","mailbox","person"],
+   icons=["sunrise","signpost-2","calculator","mailbox","file-earmark-person"],
    menu_icon="shop",
    default_index=0,
   )

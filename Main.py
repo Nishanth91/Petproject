@@ -14,7 +14,7 @@ db = TinyDB ('collected_data.json')
 with st.sidebar:
   selected = option_menu(
    menu_title="Main Menu",
-   options=["Canada","Regions","IT Calculator","About Me"],
+   options=["Canada","Regions","IT Calculator","Feedback","About Me"],
    icons=["sunrise","signpost-2","calculator","mailbox"],
    menu_icon="shop",
    default_index=0,
@@ -359,7 +359,7 @@ if selected == "IT Calculator":
 
 
 
-if selected == "About Me":
+if selected == "Feedback":
     st.subheader("Do you like my website?")
     select = st.radio("", ('Yes','No','Maybe'))
     if select == "Yes":
@@ -390,6 +390,8 @@ if selected == "About Me":
 
     local_css("style/style.css")
     
+if selected == "About Me":
+     st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish.jpg")   
 
     
     

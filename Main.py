@@ -27,10 +27,11 @@ if selected == "Regions":
 
   if choice == 'Provinces':
       
-      tab1 , tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs(["Ontario","Manitoba","Saskatchewan","Alberta","British Columbia","Quebec","Prince Edward Island","New Brunswick","Newfoundland and Labrador","Nova Scotia"])
+      tab1 , tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs(["Ontario","Manitoba","Saskatchewan","Alberta","British Columbia","Quebec","PEI","New Brunswick","Nfl & Labrador","Nova Scotia"])
 
       with tab1:
           st.header("Ontario")
+          with col 
           st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Ontario.svg/1920px-Flag_of_Ontario.svg.png",width=450)
           st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Ontario_in_Canada_2.svg/1024px-Ontario_in_Canada_2.svg.png", width=450)
           st.write("Ontario is one of the thirteen provinces and territories of Canada. Located in Central Canada, it is Canada's most populous province, with 38.3 percent of the country's population, and is the second-largest province by total area (after Quebec).Ontario is Canada's fourth-largest jurisdiction in total area when the territories of the Northwest Territories and Nunavut are included. It is home to the nation's capital city, Ottawa, and the nation's most populous city, Toronto, which is Ontario's provincial capital.")
@@ -205,16 +206,16 @@ if selected == "Regions":
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/1920px-Flag_of_Newfoundland_and_Labrador.svg.png",width=500)
             
           """
-          Newfoundland and Labrador (/njuːfənˈlænd  ...  læbrəˈdɔːr/; frequently abbreviated as NL) is the easternmost province of Canada, in the country's Atlantic region. The province comprises the island of Newfoundland and the continental region of Labrador, having a total size of 405,212 square kilometres (156,500 sq mi). In 2021, the population of Newfoundland and Labrador was estimated to be 521,758. The island of Newfoundland (and its smaller neighbouring islands) is home to around 94 per cent of the province's population, with more than half residing in the Avalon Peninsula.
+          Nova Scotia (/ˌnoʊvə ˈskoʊʃə/ NOH-və SKOH-shə; French: Nouvelle-Écosse; Scottish Gaelic: Alba Nuadh) is one of the thirteen provinces and territories of Canada. It is one of the three Maritime provinces and one of the four Atlantic provinces. Nova Scotia is Latin for "New Scotland".
 
-          According to the 2016 census, 97.0 per cent of residents reported English as their native language, making Newfoundland and Labrador Canada's most linguistically homogeneous province despite its association as "the most Irish place outside Ireland."
+          Most of the population are native English-speakers, and the province's population is 969,383 according to the 2021 Census. It is the most populous of Canada's Atlantic provinces. It is the country's second-most densely populated province and second-smallest province by area, both after Prince Edward Island. Its area of 55,284 square kilometres (21,345 sq mi) includes Cape Breton Island and 3,800 other coastal islands. The Nova Scotia peninsula is connected to the rest of North America by the Isthmus of Chignecto, on which the province's land border with New Brunswick is located. The province borders the Bay of Fundy and Gulf of Maine to the west and the Atlantic Ocean to the south and east, and is separated from Prince Edward Island and the island of Newfoundland by the Northumberland and Cabot straits, respectively.
 
-          St. John's, the capital and largest city of Newfoundland and Labrador, is Canada's 22nd-largest census metropolitan area and it is home to about 40% of the province's population. As the seat of government, St. John's is home to the House of Assembly of Newfoundland and Labrador as well as the jurisdiction's highest court, the Newfoundland and Labrador Court of Appeal.
+          The land that comprises what is now Nova Scotia was inhabited by the Miꞌkmaq people at the time of European exploration. In 1605, Acadia—France's first New France colony—was founded with the creation of Acadia's capital, Port-Royal. Britain fought France for the territory on numerous occasions for over a century afterwards. The Fortress of Louisbourg was a key focus point in the battle for control. Subsequent to the Great Upheaval (1755–1763) where the British deported the Acadians en masse, the Conquest of New France (1758–1760) by the British, and the Treaty of Paris (1763), France had to surrender Acadia to the British Empire. During the American Revolutionary War (1775–1783), thousands of Loyalists settled in Nova Scotia. In 1848, Nova Scotia became the first British colony to achieve responsible government, and it federated in July 1867 with New Brunswick and the Province of Canada (now Ontario and Quebec) to form what is now the country of Canada.
 
-          Once known as the Dominion of Newfoundland, and before that as the Newfoundland Colony, it surrendered its independence to the British Empire in 1933, following substantial economic suffering caused by the Great Depression and the aftermath of Newfoundland's participation in World War I. On March 31, 1949, it became the 10th and newest province to join the Canadian Confederation as "Newfoundland." On December 6, 2001, the Constitution of Canada was amended to change the province's name to "Newfoundland and Labrador".
+          Nova Scotia's capital and largest municipality is Halifax, which is home to over 45% of the province's population as of the 2021 census. Halifax is the thirteenth-largest census metropolitan area in Canada the largest municipality in Atlantic Canada, and Canada's second-largest coastal municipality after Vancouver. 
           """
           st.write("Official website: https://www.novascotia.com/")
-          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Nfl.csv'
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Ns.csv'
           df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in Newfoundland and Labrador!")  # add a title
           st.write(df)        
@@ -222,9 +223,12 @@ if selected == "Regions":
   elif choice == 'Territories':
       tab1 , tab2, tab3 = st.tabs(["Nunavut","Northwest Territories","Yukon"])    
       with tab1:
-          st.header("Nunavut")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Flag_of_Nunavut.svg/1280px-Flag_of_Nunavut.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Nunavut_in_Canada_2.svg/1024px-Nunavut_in_Canada_2.svg.png",width=450)
+          st.header("Nunavut") 
+          col1, col2 = st.columns([2,2])
+          with col2:  
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Flag_of_Nunavut.svg/1280px-Flag_of_Nunavut.svg.png",width=450)
+          with col1:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Nunavut_in_Canada_2.svg/1024px-Nunavut_in_Canada_2.svg.png",width=450)
           """
           Nunavut (/ˈnʊnəvʊt/ NUU-nə-vuut, /ˈnuːnəvuːt/ NOO-nə-voot; Inuktitut: ᓄᓇᕗᑦ [nunaˈvut], lit. 'our land'; French: [nunavut]) is the largest and northernmost territory of Canada. It was separated officially from the Northwest Territories on April 1, 1999, via the Nunavut Act and the Nunavut Land Claims Agreement Act which provided this territory to the Inuit for independent government. The boundaries had been drawn in 1993. The creation of Nunavut resulted in the first major change to Canada's political map in half a century since the province of Newfoundland was admitted in 1949.
 
@@ -240,9 +244,12 @@ if selected == "Regions":
           st.title("Top cities in Nunavut!")  # add a title
           st.write(df)
       with tab2:
-          st.header("Northwest Territories")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_the_Northwest_Territories.svg/1920px-Flag_of_the_Northwest_Territories.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Northwest_Territories_in_Canada_2.svg/1024px-Northwest_Territories_in_Canada_2.svg.png",width=450)
+          st.header("Northwest Territories")  
+          col1, col2 = st.columns([2,2]) 
+          with col2:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_the_Northwest_Territories.svg/1920px-Flag_of_the_Northwest_Territories.svg.png",width=450)
+          with col1:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Northwest_Territories_in_Canada_2.svg/1024px-Northwest_Territories_in_Canada_2.svg.png",width=450)
           """
           The Northwest Territories (abbreviated NT or NWT; French: Territoires du Nord-Ouest, formerly North-Western Territory and North-West Territories and namely shortened as Northwest Territory) is a federal territory of Canada. At a land area of approximately 1,144,000 km2 (442,000 sq mi) and a 2016 census population of 41,790, it is the second-largest and the most populous of the three territories in Northern Canada. Its estimated population as of 2022 is 45,605. Yellowknife is the capital, most populous community, and only city in the territory; its population was 19,569 as of the 2016 census. It became the territorial capital in 1967, following recommendations by the Carrothers Commission.
 
@@ -257,8 +264,11 @@ if selected == "Regions":
           st.write(df)          
       with tab3:
           st.header("Yukon")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_Yukon.svg/1920px-Flag_of_Yukon.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Yukon_in_Canada_2.svg/1024px-Yukon_in_Canada_2.svg.png",width=450)
+          col1, col2 = st.columns([2,2])
+          with col2:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_Yukon.svg/1920px-Flag_of_Yukon.svg.png",width=450)
+          with col1:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Yukon_in_Canada_2.svg/1024px-Yukon_in_Canada_2.svg.png",width=450)
           """
           The Northwest Territories (abbreviated NT or NWT; French: Territoires du Nord-Ouest, formerly North-Western Territory and North-West Territories and namely shortened as Northwest Territory) is a federal territory of Canada. At a land area of approximately 1,144,000 km2 (442,000 sq mi) and a 2016 census population of 41,790, it is the second-largest and the most populous of the three territories in Northern Canada. Its estimated population as of 2022 is 45,605. Yellowknife is the capital, most populous community, and only city in the territory; its population was 19,569 as of the 2016 census. It became the territorial capital in 1967, following recommendations by the Carrothers Commission.
 

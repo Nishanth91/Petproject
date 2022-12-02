@@ -45,9 +45,12 @@ if selected == "Regions":
           st.title("Top 10 cities in Ontario!")  # add a title
           st.write(df)
       with tab2:
-          st.header("Manitoba")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Flag_of_Manitoba.svg/1920px-Flag_of_Manitoba.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Manitoba_in_Canada_2.svg/800px-Manitoba_in_Canada_2.svg.png",width=450)
+          st.header("Manitoba") 
+          col1, col2 = st.columns([2,2])  
+          with col2:  
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Flag_of_Manitoba.svg/1920px-Flag_of_Manitoba.svg.png",width=500)
+          with col1:  
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Manitoba_in_Canada_2.svg/800px-Manitoba_in_Canada_2.svg.png",width=400)
           """
           Manitoba (/ˌmænɪˈtoʊbə/ (listen) MAN-ih-TOH-bə) is a province of Canada at the longitudinal centre of the country. It is Canada's fifth-most populous province, with a population of 1,342,153 as of 2021, of widely varied landscape, from arctic tundra and the Hudson Bay coastline in the north to dense boreal forest, large freshwater lakes, and prairie grassland in the central and southern regions.
 
@@ -62,8 +65,11 @@ if selected == "Regions":
           st.write(df)
       with tab3:
           st.header("Saskatchewan")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Flag_of_Saskatchewan.svg/1920px-Flag_of_Saskatchewan.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Saskatchewan_in_Canada_2.svg/1024px-Saskatchewan_in_Canada_2.svg.png",width=450)
+          col1, col2 = st.columns([2,2])
+          with col2:                        
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Flag_of_Saskatchewan.svg/1920px-Flag_of_Saskatchewan.svg.png",width=500)
+          with col1:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Saskatchewan_in_Canada_2.svg/1024px-Saskatchewan_in_Canada_2.svg.png",width=400)
           """
           Saskatchewan (/səˈskætʃəwən, sæ-, -wɒn/ sə-SKATCH-ə-wən; Canadian French: [saskatʃəwan]) is a province in western Canada, bordered on the west by Alberta, on the north by the Northwest Territories, on the east by Manitoba, to the northeast by Nunavut, and on the south by the U.S. states of Montana and North Dakota. Saskatchewan and Alberta are the only landlocked provinces of Canada. In 2022, Saskatchewan's population was estimated at 1,194,803. Nearly 10% of Saskatchewan’s total area of 651,900 square kilometres (251,700 sq mi) is fresh water, mostly rivers, reservoirs and lakes.
 
@@ -81,9 +87,12 @@ if selected == "Regions":
           st.title("Top 10 cities in Saskatchewan!")  # add a title
           st.write(df)
       with tab4:
-          st.header("Alberta")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Flag_of_Alberta.svg/1920px-Flag_of_Alberta.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Alberta_in_Canada_2.svg/1024px-Alberta_in_Canada_2.svg.png",width=450)
+          st.header("Alberta")  
+          col1, col2 = st.columns([2,2])
+          with col2:                         
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Flag_of_Alberta.svg/1920px-Flag_of_Alberta.svg.png",width=500)
+          with col1:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Alberta_in_Canada_2.svg/1024px-Alberta_in_Canada_2.svg.png",width=400)
           """
           Alberta (/ælˈbɜːrtə/ al-BUR-tə) is one of the thirteen provinces and territories of Canada. It is part of Western Canada and is one of the three prairie provinces. Alberta is bordered by British Columbia to the west, Saskatchewan to the east, the Northwest Territories (NWT) to the north, and the U.S. state of Montana to the south. It is one of the only two landlocked provinces in Canada (Saskatchewan being the other). The eastern part of the province is occupied by the Great Plains, while the western part borders the Rocky Mountains. The province has a predominantly continental climate but experiences quick temperature changes due to air aridity. Seasonal temperature swings are less pronounced in western Alberta due to occasional Chinook winds.
 
@@ -103,9 +112,12 @@ if selected == "Regions":
           st.title("Top 10 cities in Alberta!")  # add a title
           st.write(df)
       with tab5:
-          st.header("British Columbia")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Flag_of_British_Columbia.svg/800px-Flag_of_British_Columbia.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/British_Columbia_in_Canada_2.svg/1024px-British_Columbia_in_Canada_2.svg.png",width=450)
+          st.header("British Columbia")  
+          col1, col2 = st.columns([2,2])
+          with col2:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Flag_of_British_Columbia.svg/800px-Flag_of_British_Columbia.svg.png",width=500)
+          with col1:  
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/British_Columbia_in_Canada_2.svg/1024px-British_Columbia_in_Canada_2.svg.png",width=400)
           """
           British Columbia (BC; French: Colombie-Britannique) is the westernmost province of Canada, situated between the Pacific Ocean and the Rocky Mountains. It has a diverse geography, with rugged landscapes that include rocky coastlines, sandy beaches, forests, lakes, mountains, inland deserts and grassy plains and borders the province of Alberta to the east and the Yukon and Northwest Territories to the north. With an estimated population of 5.3 million as of 2022, it is Canada's third-most populous province. The capital of British Columbia is Victoria and its largest city is Vancouver. Vancouver is the third-largest metropolitan area in Canada; the 2021 census recorded 2.6 million people in Metro Vancouver.
 
@@ -121,9 +133,12 @@ if selected == "Regions":
           st.title("Top 10 cities in British Columbia!")  # add a title
           st.write(df)
       with tab6:
-          st.header("Quebec")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Flag_of_Quebec.svg/1280px-Flag_of_Quebec.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Quebec_in_Canada_2.svg/1024px-Quebec_in_Canada_2.svg.png",width=450)
+          st.header("Quebec")  
+          col1, col2 = st.columns([2,2])
+          with col2:                                   
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Flag_of_Quebec.svg/1280px-Flag_of_Quebec.svg.png",width=500)
+          with col1:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Quebec_in_Canada_2.svg/1024px-Quebec_in_Canada_2.svg.png",width=400)
           """
           Quebec (/k(w)ɪˈbɛk/ k(w)ih-BEK; French: Québec [kebɛk]) is one of the thirteen provinces and territories of Canada. It is the largest province by area and the second-largest by population. Much of the population lives in urban areas along the St. Lawrence River, between the most populous city, Montreal, and the provincial capital, Quebec City. Quebec is the home of the Québécois nation. Located in Central Canada, the province shares land borders with Ontario to the west, Newfoundland and Labrador to the northeast, New Brunswick to the southeast, and a coastal border with Nunavut; in the south it borders Maine, New Hampshire, Vermont, and New York in the United States.
 
@@ -140,8 +155,11 @@ if selected == "Regions":
           st.write(df)  
       with tab7:
           st.header("Prince Edward Island")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flag_of_Prince_Edward_Island.svg/1280px-Flag_of_Prince_Edward_Island.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Prince_Edward_Island_in_Canada_%28special_marker%29_2.svg/1024px-Prince_Edward_Island_in_Canada_%28special_marker%29_2.svg.png",width=450)
+          col1, col2 = st.columns([2,2])
+          with col2:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flag_of_Prince_Edward_Island.svg/1280px-Flag_of_Prince_Edward_Island.svg.png",width=500)
+          with col1:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Prince_Edward_Island_in_Canada_%28special_marker%29_2.svg/1024px-Prince_Edward_Island_in_Canada_%28special_marker%29_2.svg.png",width=400)
           """
           Prince Edward Island (PEI; French: Île-du-Prince-Édouard) is one of the thirteen provinces and territories of Canada. It is the smallest province in terms of land area and population, but the most densely populated. The island has several nicknames: "Garden of the Gulf", "Birthplace of Confederation" and "Cradle of Confederation". Its capital and largest city is Charlottetown. It is one of the three Maritime provinces and one of the four Atlantic provinces.
 
@@ -157,9 +175,12 @@ if selected == "Regions":
           st.title("Top 10 cities in Prince Edward Island!")  # add a title
           st.write(df)         
       with tab8:
-          st.header("New Brunswick")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Flag_of_New_Brunswick.svg/1280px-Flag_of_New_Brunswick.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/New_Brunswick_in_Canada_2.svg/1024px-New_Brunswick_in_Canada_2.svg.png",width=450)
+          st.header("New Brunswick")  
+          col1, col2 = st.columns([2,2])
+          with col2: 
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Flag_of_New_Brunswick.svg/1280px-Flag_of_New_Brunswick.svg.png",width=500)
+          with col1:  
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/New_Brunswick_in_Canada_2.svg/1024px-New_Brunswick_in_Canada_2.svg.png",width=400)
           """
           New Brunswick (French: Nouveau-Brunswick, pronounced [nuvo bʁœnswik], locally [nuvo bʁɔnzwɪk]) is one of the thirteen provinces and territories of Canada. It is one of the three Maritime provinces and one of the four Atlantic provinces. It is the only province with both English and French as its official languages.
 
@@ -181,9 +202,12 @@ if selected == "Regions":
           st.title("Top 10 cities in New Brunswick!")  # add a title
           st.write(df) 
       with tab9:
-          st.header("Newfoundland and Labrador")   
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/1920px-Flag_of_Newfoundland_and_Labrador.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Newfoundland_and_Labrador_in_Canada_2.svg/1024px-Newfoundland_and_Labrador_in_Canada_2.svg.png",width=450)
+          st.header("Newfoundland and Labrador")  
+          col1, col2 = st.columns([2,2])
+          with col2: 
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/1920px-Flag_of_Newfoundland_and_Labrador.svg.png",width=500)
+          with col1:  
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Newfoundland_and_Labrador_in_Canada_2.svg/1024px-Newfoundland_and_Labrador_in_Canada_2.svg.png",width=400)
           """
           Newfoundland and Labrador (/njuːfənˈlænd  ...  læbrəˈdɔːr/; frequently abbreviated as NL) is the easternmost province of Canada, in the country's Atlantic region. The province comprises the island of Newfoundland and the continental region of Labrador, having a total size of 405,212 square kilometres (156,500 sq mi). In 2021, the population of Newfoundland and Labrador was estimated to be 521,758. The island of Newfoundland (and its smaller neighbouring islands) is home to around 94 per cent of the province's population, with more than half residing in the Avalon Peninsula.
 
@@ -228,9 +252,9 @@ if selected == "Regions":
           st.header("Nunavut") 
           col1, col2 = st.columns([2,2])
           with col2:  
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Flag_of_Nunavut.svg/1280px-Flag_of_Nunavut.svg.png",width=450)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Flag_of_Nunavut.svg/1280px-Flag_of_Nunavut.svg.png",width=500)
           with col1:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Nunavut_in_Canada_2.svg/1024px-Nunavut_in_Canada_2.svg.png",width=450)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Nunavut_in_Canada_2.svg/1024px-Nunavut_in_Canada_2.svg.png",width=400)
           """
           Nunavut (/ˈnʊnəvʊt/ NUU-nə-vuut, /ˈnuːnəvuːt/ NOO-nə-voot; Inuktitut: ᓄᓇᕗᑦ [nunaˈvut], lit. 'our land'; French: [nunavut]) is the largest and northernmost territory of Canada. It was separated officially from the Northwest Territories on April 1, 1999, via the Nunavut Act and the Nunavut Land Claims Agreement Act which provided this territory to the Inuit for independent government. The boundaries had been drawn in 1993. The creation of Nunavut resulted in the first major change to Canada's political map in half a century since the province of Newfoundland was admitted in 1949.
 
@@ -249,9 +273,9 @@ if selected == "Regions":
           st.header("Northwest Territories")  
           col1, col2 = st.columns([2,2]) 
           with col2:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_the_Northwest_Territories.svg/1920px-Flag_of_the_Northwest_Territories.svg.png",width=450)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_the_Northwest_Territories.svg/1920px-Flag_of_the_Northwest_Territories.svg.png",width=500)
           with col1:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Northwest_Territories_in_Canada_2.svg/1024px-Northwest_Territories_in_Canada_2.svg.png",width=450)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Northwest_Territories_in_Canada_2.svg/1024px-Northwest_Territories_in_Canada_2.svg.png",width=400)
           """
           The Northwest Territories (abbreviated NT or NWT; French: Territoires du Nord-Ouest, formerly North-Western Territory and North-West Territories and namely shortened as Northwest Territory) is a federal territory of Canada. At a land area of approximately 1,144,000 km2 (442,000 sq mi) and a 2016 census population of 41,790, it is the second-largest and the most populous of the three territories in Northern Canada. Its estimated population as of 2022 is 45,605. Yellowknife is the capital, most populous community, and only city in the territory; its population was 19,569 as of the 2016 census. It became the territorial capital in 1967, following recommendations by the Carrothers Commission.
 
@@ -268,9 +292,9 @@ if selected == "Regions":
           st.header("Yukon")   
           col1, col2 = st.columns([2,2])
           with col2:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_Yukon.svg/1920px-Flag_of_Yukon.svg.png",width=450)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_Yukon.svg/1920px-Flag_of_Yukon.svg.png",width=500)
           with col1:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Yukon_in_Canada_2.svg/1024px-Yukon_in_Canada_2.svg.png",width=450)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Yukon_in_Canada_2.svg/1024px-Yukon_in_Canada_2.svg.png",width=400)
           """
           The Northwest Territories (abbreviated NT or NWT; French: Territoires du Nord-Ouest, formerly North-Western Territory and North-West Territories and namely shortened as Northwest Territory) is a federal territory of Canada. At a land area of approximately 1,144,000 km2 (442,000 sq mi) and a 2016 census population of 41,790, it is the second-largest and the most populous of the three territories in Northern Canada. Its estimated population as of 2022 is 45,605. Yellowknife is the capital, most populous community, and only city in the territory; its population was 19,569 as of the 2016 census. It became the territorial capital in 1967, following recommendations by the Carrothers Commission.
 

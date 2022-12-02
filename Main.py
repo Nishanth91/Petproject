@@ -341,25 +341,27 @@ if selected == "IT Calculator":
 
   if Prov == 'Ontario':
     ihs = Inc * (100 - Ont) / 100
-    st.header(f"Your take home salary would be ${ihs:.2f} with {Ont}%  deductions.")
-    if Inc > Aont:
-      st.subheader (f"Wow! You earn more than the average income ${Aont} of {Prov}")
-    else:
-      st.subheader (f"Your income is less than the average income ${Aont} of {Prov}. Time to upskill yourself! ") 
+    if Name and Prov and Inc:
+        st.header(f"Your take home salary would be ${ihs:.2f} with {Ont}%  deductions.")
+        if Inc > Aont:
+        st.subheader (f"Wow! You earn more than the average income ${Aont} of {Prov}")
+        else:
+        st.subheader (f"Your income is less than the average income ${Aont} of {Prov}. Time to upskill yourself! ") 
   if Prov == 'Manitoba':
     ihs = Inc * (100 - Ont) / 100
-    st.header(f"Your take home salary would be ${ihs:.2f} with {Mab}%  deductions.")
-    if Inc > Aont:
-      st.subheader (f"Wow! You earn more than the average income ${Amab} of {Prov}")
-    else:
-      st.subheader (f"Your income is less than the average income ${Amab} of {Prov}. Time to upskill yourself! ") 
+    if Name and Prov and Inc:
+        st.header(f"Your take home salary would be ${ihs:.2f} with {Mab}%  deductions.")
+        if Inc > Aont:
+        st.subheader (f"Wow! You earn more than the average income ${Amab} of {Prov}")
+        else:
+        st.subheader (f"Your income is less than the average income ${Amab} of {Prov}. Time to upskill yourself! ") 
 
 
 
 
 if selected == "About Me":
     st.subheader("Do you like my website?")
-    select = st.radio(" ", ( 'Yes','No','Maybe'))
+    select = st.radio("", ('Yes','No','Maybe'))
     if select == "Yes":
         st.write("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
     if select == "No":
@@ -368,6 +370,7 @@ if selected == "About Me":
         st.write("Feel free to write and share your experience & improvements")
     
     st.write("")    
+    st.write("")
     st.subheader(":mailbox: Get In Touch With Me!")
     contact_form = """
     <form action="https://formsubmit.co/NISHANTH91.DBA@GMAIL.COM" method="POST">
@@ -378,7 +381,6 @@ if selected == "About Me":
         <button type="submit">Send</button>
     </form>
     """
-    
     st.markdown(contact_form, unsafe_allow_html=True)
 
     # Use Local CSS File
@@ -387,5 +389,7 @@ if selected == "About Me":
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
     local_css("style/style.css")
+    
+
     
     

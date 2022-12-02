@@ -27,7 +27,7 @@ if selected == "Regions":
 
   if choice == 'Provinces':
       
-      tab1 , tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs(["Ontario","Manitoba","Saskatchewan","Alberta","British Columbia","Quebec","Prince Edward Island","New Brunswick","Newfoundland and Labrador"])
+      tab1 , tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs(["Ontario","Manitoba","Saskatchewan","Alberta","British Columbia","Quebec","Prince Edward Island","New Brunswick","Newfoundland and Labrador","Nova Scotia"])
 
       with tab1:
           st.header("Ontario")
@@ -196,7 +196,27 @@ if selected == "Regions":
           df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in Newfoundland and Labrador!")  # add a title
           st.write(df)         
+      with tab10:
+          st.header("Nova Scotia")  
+          col1, col2 = st.columns([2,2])
+          with col1:
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/1920px-Flag_of_Newfoundland_and_Labrador.svg.png",width=400)
+          with col2:            
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Nova_Scotia_in_Canada_2.svg/1024px-Nova_Scotia_in_Canada_2.svg.png",width=400)
+          """
+          Newfoundland and Labrador (/njuːfənˈlænd  ...  læbrəˈdɔːr/; frequently abbreviated as NL) is the easternmost province of Canada, in the country's Atlantic region. The province comprises the island of Newfoundland and the continental region of Labrador, having a total size of 405,212 square kilometres (156,500 sq mi). In 2021, the population of Newfoundland and Labrador was estimated to be 521,758. The island of Newfoundland (and its smaller neighbouring islands) is home to around 94 per cent of the province's population, with more than half residing in the Avalon Peninsula.
 
+          According to the 2016 census, 97.0 per cent of residents reported English as their native language, making Newfoundland and Labrador Canada's most linguistically homogeneous province despite its association as "the most Irish place outside Ireland."
+
+          St. John's, the capital and largest city of Newfoundland and Labrador, is Canada's 22nd-largest census metropolitan area and it is home to about 40% of the province's population. As the seat of government, St. John's is home to the House of Assembly of Newfoundland and Labrador as well as the jurisdiction's highest court, the Newfoundland and Labrador Court of Appeal.
+
+          Once known as the Dominion of Newfoundland, and before that as the Newfoundland Colony, it surrendered its independence to the British Empire in 1933, following substantial economic suffering caused by the Great Depression and the aftermath of Newfoundland's participation in World War I. On March 31, 1949, it became the 10th and newest province to join the Canadian Confederation as "Newfoundland." On December 6, 2001, the Constitution of Canada was amended to change the province's name to "Newfoundland and Labrador".
+          """
+          st.write("Official website: https://www.novascotia.com/")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Nfl.csv'
+          df = pd.read_csv(url,index_col=0)
+          st.title("Top 10 cities in Newfoundland and Labrador!")  # add a title
+          st.write(df)        
 
   elif choice == 'Territories':
       tab1 , tab2, tab3 = st.tabs(["Nunavut","Northwest Territories","Yukon"])    

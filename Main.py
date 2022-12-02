@@ -347,7 +347,7 @@ if selected == "IT Calculator":
     else:
       st.subheader (f"Your income is less than the average income ${Aont} of {Prov}. Time to upskill yourself! ") 
   if Prov == 'Manitoba':
-        ihs = Inc * (100 - Ont) / 100
+    ihs = Inc * (100 - Ont) / 100
     st.header(f"Your take home salary would be ${ihs:.2f} with {Mab}%  deductions.")
     if Inc > Aont:
       st.subheader (f"Wow! You earn more than the average income ${Amab} of {Prov}")

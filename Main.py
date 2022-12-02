@@ -452,9 +452,12 @@ if selected == "About Me":
 
     with col1:
      st.header("Hey there! I'm Nishanth.")
-     st.subheader("I'm an Oracle database administrator and a newbee in python programming")    
+     st.subheader("I'm an Oracle database administrator & Devops admin. ALso a newbee in python programming")    
+     st.write("App work in progress, not complete yet")
     with col2:
      st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish.jpg",width=250)
+     
+     
         
         
         

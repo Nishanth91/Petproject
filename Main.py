@@ -350,14 +350,15 @@ if selected == "IT Calculator":
 
 if selected == "About Me":
     st.subheader("Do you like my website?")
-    select = st.radio("Do you like my website?",('Yes','No','Maybe'))
+    select = st.radio("Do you like my website?", ( 'Yes','No','Maybe'))
     if select == "Yes":
         st.write("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
     if select == "No":
-        st.write("\N{grinning face} Sorry to know! We will try our best to improve this project") 
+        st.write("\N{unamused face} Sorry to know! We will try our best to improve this project") 
     if select =="Maybe":
         st.write("Feel free to write to me and share your experience & improvements")
-        
+    
+    st.write("")    
     st.subheader(":mailbox: Get In Touch With Me!")
     contact_form = """
     <form action="https://formsubmit.co/NISHANTH91.DBA@GMAIL.COM" method="POST">

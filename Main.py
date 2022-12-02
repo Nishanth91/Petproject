@@ -200,7 +200,7 @@ if selected == "Regions":
           st.header("Nova Scotia")  
           col1, col2 = st.columns([2,2])
           with col1:
-            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/1920px-Flag_of_Newfoundland_and_Labrador.svg.png",width=400)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/1920px-Flag_of_Newfoundland_and_Labrador.svg.png",width=450)
           with col2:            
             st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Nova_Scotia_in_Canada_2.svg/1024px-Nova_Scotia_in_Canada_2.svg.png",width=400)
           """

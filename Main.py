@@ -31,9 +31,11 @@ if selected == "Regions":
 
       with tab1:
           st.header("Ontario")
-          with col 
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Ontario.svg/1920px-Flag_of_Ontario.svg.png",width=450)
-          st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Ontario_in_Canada_2.svg/1024px-Ontario_in_Canada_2.svg.png", width=450)
+          col1, col2 = st.columns([2,2])
+          with col2: 
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Ontario.svg/1920px-Flag_of_Ontario.svg.png",width=450)
+          with col1:  
+            st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Ontario_in_Canada_2.svg/1024px-Ontario_in_Canada_2.svg.png", width=450)
           st.write("Ontario is one of the thirteen provinces and territories of Canada. Located in Central Canada, it is Canada's most populous province, with 38.3 percent of the country's population, and is the second-largest province by total area (after Quebec).Ontario is Canada's fourth-largest jurisdiction in total area when the territories of the Northwest Territories and Nunavut are included. It is home to the nation's capital city, Ottawa, and the nation's most populous city, Toronto, which is Ontario's provincial capital.")
           st.write("Ontario is bordered by the province of Manitoba to the west, Hudson Bay and James Bay to the north, and Quebec to the east and northeast, and to the south by the U.S. states of (from west to east) Minnesota, Michigan, Ohio, Pennsylvania, and New York. Almost all of Ontario's 2,700 km (1,678 mi) border with the United States follows inland waterways: from the westerly Lake of the Woods, eastward along the major rivers and lakes of the Great Lakes/Saint Lawrence River drainage system. There is only about 1 km (0.6 mi) of actual land border, made up of portages including Height of Land Portage on the Minnesota border")
           st.write("The great majority of Ontario's population and arable land is in Southern Ontario. In contrast, Northern Ontario is sparsely populated with cold winters and heavy forestation")

@@ -394,12 +394,12 @@ if selected == "About Me":
     col1, col2, col3 = st.beta_columns([1,6,1])
 
     with col1:
-    st.header("Hey there! Im Nishanth.")
-    st.subheader("I'm an Oracle database administrator and a newbee in python programming \N{amused face}.")
+     st.header("Hey there! Im Nishanth.")
+     st.subheader("I'm an Oracle database administrator and a newbee in python programming \N{amused face}.")
     with col2:
-    st.write("")    
+     st.write("")    
     with col3:
-    st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish.jpg",width=200)   
+     st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish.jpg",width=200)   
 
         
         

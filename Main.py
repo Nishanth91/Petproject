@@ -13,7 +13,7 @@ db = TinyDB ('collected_data.json')
 with st.sidebar:
   selected = option_menu(
    menu_title="Main Menu",
-   options=["Canada Info","Regions","IT Calculator","Feedback"],
+   options=["Canada","Regions","IT Calculator","About Me"],
    icons=["sunrise","signpost-2","calculator","mailbox"],
    menu_icon="shop",
    default_index=0,
@@ -31,7 +31,6 @@ if selected == "Regions":
       with tab1:
           st.header("Ontario")
           st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Ontario.svg/1920px-Flag_of_Ontario.svg.png",width=450)
-      #  st.image("https://images.squarespace-cdn.com/content/v1/583115ecb8a79b98acd25bd4/1599668258018-9T50KZF3PPAMS9JD3D6X/Ontario.jpg?format=1000w", width=500)
           st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Ontario_in_Canada_2.svg/1024px-Ontario_in_Canada_2.svg.png", width=450)
           st.write("Ontario is one of the thirteen provinces and territories of Canada. Located in Central Canada, it is Canada's most populous province, with 38.3 percent of the country's population, and is the second-largest province by total area (after Quebec).Ontario is Canada's fourth-largest jurisdiction in total area when the territories of the Northwest Territories and Nunavut are included. It is home to the nation's capital city, Ottawa, and the nation's most populous city, Toronto, which is Ontario's provincial capital.")
           st.write("Ontario is bordered by the province of Manitoba to the west, Hudson Bay and James Bay to the north, and Quebec to the east and northeast, and to the south by the U.S. states of (from west to east) Minnesota, Michigan, Ohio, Pennsylvania, and New York. Almost all of Ontario's 2,700 km (1,678 mi) border with the United States follows inland waterways: from the westerly Lake of the Woods, eastward along the major rivers and lakes of the Great Lakes/Saint Lawrence River drainage system. There is only about 1 km (0.6 mi) of actual land border, made up of portages including Height of Land Portage on the Minnesota border")
@@ -53,7 +52,8 @@ if selected == "Regions":
           Manitoba's capital and largest city is Winnipeg, the seventh most populous municipality in Canada. Winnipeg is the seat of government, home to the Legislative Assembly of Manitoba and the Provincial Court. Four of the province's five universities, all four of its professional sports teams, and most of its cultural activities (including Festival du Voyageur and Folklorama) are located in Winnipeg. The city has train and bus stations and an international airport; a Canadian Forces base, CFB Winnipeg, operates from the airport and is the regional headquarters of the North American Aerospace Defense Command. 
           """
           st.write("Official website: https://www.gov.mb.ca/")
-          df = pd.read_csv("/csv/Mab.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Mab.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in Manitoba!")  # add a title
           st.write(df)
       with tab3:
@@ -72,7 +72,8 @@ if selected == "Regions":
           In 1992, the federal and provincial governments signed a historic land claim agreement with First Nations in Saskatchewan. The First Nations received compensation which they could use to buy land on the open market for the bands. They have acquired about 3,079 square kilometres (761,000 acres; 1,189 sq mi), new reserve lands under this process. Some First Nations have used their settlement to invest in urban areas, including Regina and Saskatoon.
           """
           st.write("Official website: https://www.saskatchewan.ca/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Sas.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Sas.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in Saskatchewan!")  # add a title
           st.write(df)
       with tab4:
@@ -93,7 +94,8 @@ if selected == "Regions":
           Alberta is renowned for its natural beauty, richness in fossils and for housing important nature reserves. Alberta is home to six UNESCO designated World Heritage Sites: The Canadian Rocky Mountain Parks, Dinosaur Provincial Park, the Head-Smashed-In Buffalo Jump, Waterton-Glacier International Peace Park, Wood Buffalo National Park and Writing-on-Stone Provincial Park. Other popular sites include Banff National Park, Elk Island National Park, Jasper National Park, Waterton Lakes National Park, and Drumheller. 
           """
           st.write("Official website: https://www.alberta.ca/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Alb.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Alb.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in Alberta!")  # add a title
           st.write(df)
       with tab5:
@@ -110,7 +112,8 @@ if selected == "Regions":
           Major sectors of British Columbia's economy include forestry, mining, filmmaking and video production, tourism, real estate, construction, wholesale, and retail. Its main exports include lumber and timber, pulp and paper products, copper, coal, and natural gas. British Columbia exhibits high property values and is a significant centre for maritime trade: the Port of Vancouver is the largest port in Canada and the most diversified port in North America. Although less than 5 percent of the province's territory is arable land, significant agriculture exists in the Fraser Valley and Okanagan due to the warmer climate. British Columbia is home to 45% of all publicly listed companies in Canada. 
           """
           st.write("Official website: https://www2.gov.bc.ca/gov/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Bc.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Bc.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in British Columbia!")  # add a title
           st.write(df)
       with tab6:
@@ -127,7 +130,8 @@ if selected == "Regions":
           Quebec's official language is French; Québécois French is the regional variety. The economy of Quebec is mainly supported by its large service sector and varied industrial sector. For exports, it leans on the key industries of aeronautics, hydroelectricity, mining, pharmaceuticals, aluminum, wood and paper. Quebec is well known for producing maple syrup, for its comedy, and for making hockey one of the most popular sports in Canada. It is also renowned for its culture; the province produces literature, music, films, TV shows, festivals, folklore, and more. 
           """
           st.write("Official website: https://www.quebec.ca/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Que.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Que.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in Quebec!")  # add a title
           st.write(df)  
       with tab7:
@@ -144,7 +148,8 @@ if selected == "Regions":
           Prince Edward Island is located in the Gulf of St. Lawrence, about 200 kilometres (120 miles) north of Halifax and 600 kilometres (370 miles) east of Quebec City, and has a land area of 5,686.03 km2 (2,195.39 sq mi). The main island is 5,620 km2 (2,170 sq mi) in size. It is the 104th-largest island in the world, Canada's 23rd-largest island, and the only Canadian province consisting solely of an island. 
           """
           st.write("Official website: https://www.princeedwardisland.ca/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Pei.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Pei.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in Prince Edward Island!")  # add a title
           st.write(df)         
       with tab8:
@@ -167,7 +172,8 @@ if selected == "Regions":
           Tourism accounts for 9% of the labour force either directly or indirectly. Popular destinations include the Hopewell Rocks, Fundy National Park, Magnetic Hill, Kouchibouguac National Park and Roosevelt Campobello International Park. 
           """
           st.write("Official website: https://www2.gnb.ca/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Nbw.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Nbw.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in New Brunswick!")  # add a title
           st.write(df) 
       with tab9:
@@ -185,7 +191,8 @@ if selected == "Regions":
           """
           st.write("Official website 1: https://www.gov.nl.ca/")
           st.write("Official website 2 : https://www.newfoundlandlabrador.com/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Nfl.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Nfl.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Top 10 cities in Newfoundland and Labrador!")  # add a title
           st.write(df)         
 
@@ -206,7 +213,8 @@ if selected == "Regions":
           Nunavut is the least populous of Canada's provinces and territories. One of the world's most remote, sparsely settled regions, Nunavut has a population of 39,589 (2021 figure, up from 35,944 in 2016) consisting mostly of Inuit. The population occupies a land area of just over 1,877,787 km2 (725,018 sq mi), or slightly smaller than Mexico (excluding water surface area). Nunavut is also home to the world's northernmost permanently inhabited place, Alert. Eureka, a weather station on Ellesmere Island, has the lowest average annual temperature of any Canadian weather station. 
           """
           st.write("Official website: https://www.gov.nu.ca/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Nun.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Nun.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Top cities in Nunavut!")  # add a title
           st.write(df)
       with tab2:
@@ -221,7 +229,8 @@ if selected == "Regions":
           The Northwest Territories is bordered by Canada's two other territories, Nunavut to the east and Yukon to the west, and by the provinces of British Columbia, Alberta, and Saskatchewan to the south; it also touches Manitoba to the southeast at a quadripoint that includes Nunavut and Saskatchewan. The land area of the Northwest Territories is vast enough to be roughly equal to France, Portugal and Spain combined, although its overall area is even larger because of its vast lakes that freeze over in winter. 
           """
           st.write("Official website: https://www.gov.nt.ca/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Nwt.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Nwt.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Cities & Towns in Northwest Territories!")  # add a title
           st.write(df)          
       with tab3:
@@ -236,12 +245,13 @@ if selected == "Regions":
           The Northwest Territories is bordered by Canada's two other territories, Nunavut to the east and Yukon to the west, and by the provinces of British Columbia, Alberta, and Saskatchewan to the south; it also touches Manitoba to the southeast at a quadripoint that includes Nunavut and Saskatchewan. The land area of the Northwest Territories is vast enough to be roughly equal to France, Portugal and Spain combined, although its overall area is even larger because of its vast lakes that freeze over in winter. 
           """
           st.write("Official website: https://yukon.ca/")
-          df = pd.read_csv("/Users/nishanth/Desktop/VSC/csv/Yuk.csv")
+          url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/Yuk.csv'
+          df = pd.read_csv(url,index_col=0)
           st.title("Cities & Towns in Yukon!")  # add a title
           st.write(df)   
 
 
-if selected == "Canada Info":
+if selected == "Canada":
     st.header(f"About Canada") 
     df = pd.DataFrame(
         np.random.randn(1,1) / [50, 50] + [43.66, -79.4],
@@ -337,7 +347,7 @@ if selected == "IT Calculator":
       st.subheader (f"Your income is less than the average income ${Aont} of {Prov}. Time to upskill yourself! ") 
 
 
-if selected == "Feedback":
+if selected == "About Me":
     st.header(":mailbox: Get In Touch With Me!")
     contact_form = """
     <form action="https://formsubmit.co/NISHANTH91.DBA@GMAIL.COM" method="POST">

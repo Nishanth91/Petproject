@@ -346,17 +346,26 @@ if selected == "IT Calculator":
       st.subheader (f"Wow! You earn more than the average income ${Aont} of {Prov}")
     else:
       st.subheader (f"Your income is less than the average income ${Aont} of {Prov}. Time to upskill yourself! ") 
+  if Prov == 'Manitoba':
+        ihs = Inc * (100 - Ont) / 100
+    st.header(f"Your take home salary would be ${ihs:.2f} with {Mab}%  deductions.")
+    if Inc > Aont:
+      st.subheader (f"Wow! You earn more than the average income ${Amab} of {Prov}")
+    else:
+      st.subheader (f"Your income is less than the average income ${Amab} of {Prov}. Time to upskill yourself! ") 
+
+
 
 
 if selected == "About Me":
     st.subheader("Do you like my website?")
-    select = st.radio("Do you like my website?", ( 'Yes','No','Maybe'))
+    select = st.radio(" ", ( 'Yes','No','Maybe'))
     if select == "Yes":
         st.write("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
     if select == "No":
         st.write("\N{unamused face} Sorry to know! We will try our best to improve this project") 
     if select =="Maybe":
-        st.write("Feel free to write to me and share your experience & improvements")
+        st.write("Feel free to write and share your experience & improvements")
     
     st.write("")    
     st.subheader(":mailbox: Get In Touch With Me!")

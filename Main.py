@@ -448,11 +448,11 @@ if selected == "Feedback":
     local_css("style/style.css")
     
 if selected == "About Me":
-    col1, col2 = st.columns([4,1])
+    col1, col2 = st.columns([4,2])
 
     with col1:
      st.header("Hey there! I'm Nishanth.")
-     st.subheader("I'm an Oracle database administrator & Devops admin. ALso a newbee in python programming")    
+     st.subheader("I'm an Oracle database administrator & Devops admin. Also a newbee in python programming & Devops beginner")    
      st.write("App work in progress, not complete yet")
     with col2:
      st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish.jpg",width=250)

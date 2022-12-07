@@ -438,9 +438,9 @@ if selected == "Tax":
           'Inc':Inc
       })
 
-  if Prov == 'Ontario':
-    ihs = Inc * (100 - Ont) / 100
-    if Name and Prov and Inc:
+#  if Prov == 'Ontario':
+#    ihs = Inc * (100 - Ont) / 100
+#    if Name and Prov and Inc:
         
   if Prov == 'Manitoba':
     ihs = Inc * (100 - Ont) / 100

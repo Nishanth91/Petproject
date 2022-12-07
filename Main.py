@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 import numpy as np
 import os
 import emoji
@@ -14,8 +15,8 @@ db = TinyDB ('collected_data.json')
 with st.sidebar:
   selected = option_menu(
    menu_title="Main Menu",
-   options=["Canada","Regions","IT Calculator","Feedback","About Me"],
-   icons=["sunrise","signpost-2","calculator","mailbox","file-earmark-person"],
+   options=["Canada","Regions","Average Income","Tax","Feedback","About Me"],
+   icons=["sunrise","signpost-2","currency-exchange","folder-fill","mailbox","file-earmark-person"],
    menu_icon="shop",
    default_index=0,
   )
@@ -325,96 +326,6 @@ if selected == "Canada":
 
     A highly developed country, Canada has the 24th highest nominal per capita income globally and the sixteenth-highest ranking on the Human Development Index. Its advanced economy is the eighth-largest in the world, relying chiefly upon its abundant natural resources and well-developed international trade networks. Canada is part of several major international and intergovernmental institutions or groupings including the United Nations, NATO, the G7, the Group of Ten, the G20, the Organisation for Economic Co-operation and Development (OECD), the World Trade Organization (WTO), the Commonwealth of Nations, the Arctic Council, the Organisation internationale de la Francophonie, the Asia-Pacific Economic Cooperation forum, and the Organization of American States. 
     """
-    
-  
-if selected == "IT Calculator":
- # st.markdown(
- #         f"""
- #         <style>
- #         .stApp {{
- #             #background-image: url("https://wallpapercave.com/wp/wp1928778.jpg");
- #             background-image: url("https://rare-gallery.com/thumbs/1037612-fall-leaves-illustration-Photoshop-space-red-stars-color-tree-autumn-leaf-flower-plant-star-computer-wallpaper-astronomical-object-maple-tree-maple-leaf.jpg");
- #             opacity:0.90;
- #             background-attachment: fixed;
- #             background-size: cover
- #         }}
- #         </style>
- #         """,
- #        unsafe_allow_html=True
- #     )
-
-
-  st.markdown("<h1 style='text-align: center; color: red;'>Income Tax calculator - Canada</h1>", unsafe_allow_html=True)
-
-  #st.title("Income Tax calculator - Canada")
-  """
-  In this form we collect following details and provide inhand salary deductions info,
-  * Name
-  * Province
-  * Annual salary
-  * Acknowledgement for data collection
-  """
-
-  #Tax Slabs
-  Ont = 32.2
-  Mab = 35.6
-  BC  = 29.8
-  Alb = 31.7
-  Sas = 33.4
-  Que = 36.2
-  PEI=  36.1
-  NBW = 35
-  NFL = 34.8
-
-  #Average salary of Provinces
-  Aont= 55524
-  Amab= 49661
-  Abc=  53516
-  Aalb= 61865
-  Asas= 54371
-  Aque= 51735
-  Apei= 45912
-  Anbw= 49511
-  Anfl= 55508
-
-  Name = st.text_input("Enter your name : ")
-  Prov = st.selectbox('Select a province that you work for: ', ('Choose from dropdown 🔽','Ontario','Manitoba','Saskatchewan','Alberta','British Columbia','Quebec','Newfoundland and Labrador','New Brinswick','Prince Edward Island'))
-  time.sleep(0.5)
-  st.write ('You have selected:', Prov)
-  Age= st.slider("Choose your age: ")
-  Inc = st.number_input("Enter you annual gross income in CAD: ")
-  print()
-  Coll= st.checkbox("Can we collect your data")
-  print()
-
-  if Name and Prov and Age and Inc:
-      st.write (f"Hi {Name}! Welcome to my calculator app")
-      db.insert({
-          'Name':Name,
-          'Prov':Prov,
-          'Age':Age,
-          'Inc':Inc
-      })
-
-  if Prov == 'Ontario':
-    ihs = Inc * (100 - Ont) / 100
-    if Name and Prov and Inc:
-        st.header(f"Your take home salary would be ${ihs:.2f} with {Ont}%  deductions.")
-        if Inc > Aont:
-            st.subheader (f"Wow! You earn more than the average income ${Aont} of {Prov}")
-        else:
-            st.subheader (f"Your income is less than the average income ${Aont} of {Prov}. Time to upskill yourself! ") 
-  if Prov == 'Manitoba':
-    ihs = Inc * (100 - Ont) / 100
-    if Name and Prov and Inc:
-        st.header(f"Your take home salary would be ${ihs:.2f} with {Mab}%  deductions.")
-        if Inc > Aont:
-            st.subheader (f"Wow! You earn more than the average income ${Amab} of {Prov}")
-        else:
-            st.subheader (f"Your income is less than the average income ${Amab} of {Prov}. Time to upskill yourself! ") 
-
-
-
 
 if selected == "Feedback":
     st.subheader("Do you like my website?")
@@ -456,8 +367,96 @@ if selected == "About Me":
      st.write("App work in progress, not complete yet")
     with col2:
      st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish.jpg",width=250)
+
+
+if selected == "Average Income"
+    st.subheader(" Household & Individual income in Canadian Provinces")
+    df = pd.DataFrame(
+        [["Alberta", 61865, 80449], ["British Columbia", 53416,72000],["Manitoba",49661,84130],["NFL",55508,82540],["Nova Scotia",48470,53000],["New Brunswick",49511,59000],["Ontario",55524,80322],["PEI",45912,78000],["Quebec",51735,87080],["Saskatchewan",54371,78000]],
+        columns=["Provinces", "Average Individual Income", "Average Household Income"]
+    )
+    fig = px.bar(df, x="Provinces", y=["Average Household Income", "Average Individual Income"], barmode='group', height=400)
+    st.plotly_chart(fig)
+
+    st.subheader("Household income by cities")
+    df2 = pd.DataFrame(
+        [["Edmonton", 97800], ["Vancouver", 80000],["Winnipeg",79813],["St.John",59000],["Halifax",55000],["Fredericton",60000],["Toronto",78373],["Charlottetown",78000],["Montreal",82589],["Regina",81000]],
+        columns=["Provinces", "Average Household Income"]
+    )
+    fig2 = px.bar(df2, x="Provinces", y="Average Household Income", barmode='group', height=400)
+    st.plotly_chart(fig2)
+
+    st.subheader("Individual income in Canadian Territories")
+    df1 = pd.DataFrame(
+        [["Yukon", 61812], ["Nunavut", 87355],["Northwest Territories",77670]],
+        columns=["Provinces", "Average Individual Income"]
+    )
+    fig1 = px.bar(df1, x="Provinces", y="Average Individual Income", barmode='group', height=400)
+    st.plotly_chart(fig1)
      
-     
+if selected == "Tax":
+    
+  st.markdown("<h1 style='text-align: center; color: red;'>Income Tax calculator - Canada</h1>", unsafe_allow_html=True)
+
+  #st.title("Income Tax calculator - Canada")
+  """
+  In this form we collect following details and provide inhand salary deductions info,
+  * Name
+  * Province
+  * Annual salary
+  * Acknowledgement for data collection
+  """
+
+  #State Tax Slabs
+  Ont = 32.2
+  Mab = 35.6
+  Bc  = 29.8
+  Alb = 31.7
+  Sas = 33.4
+  Que = 36.2
+  Pei=  36.1
+  Nbw = 35
+  Nfl = 34.8
+
+
+  chart_data = pd.DataFrame(
+    pd.read_csv('https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/average.csv')
+    columns=['Avg Individual Income', 'Avg Household Income'])
+  st.line_chart(chart_data)
+
+  Name = st.text_input("Enter your name : ")
+  Prov = st.selectbox('Select a province that you work for: ', ('Choose from dropdown 🔽','Ontario','Manitoba','Saskatchewan','Alberta','British Columbia','Quebec','Nfl & Labrador','New Brunswick','Prince Edward Island','Nova Scotia'))
+  time.sleep(0.5)
+  st.write ('You have selected:', Prov)
+  Age= st.slider("Choose your age: ")
+  Inc = st.number_input("Enter you annual gross income in CAD: ")
+  print()
+  Coll= st.checkbox("Can we collect your data")
+  print()
+
+  if Name and Prov and Age and Inc:
+      st.write (f"Hi {Name}! Welcome to my calculator app")
+      db.insert({
+          'Name':Name,
+          'Prov':Prov,
+          'Age':Age,
+          'Inc':Inc
+      })
+
+  if Prov == 'Ontario':
+    ihs = Inc * (100 - Ont) / 100
+    if Name and Prov and Inc:
+        
+  
+  if Prov == 'Manitoba':
+    ihs = Inc * (100 - Ont) / 100
+    if Name and Prov and Inc:
+        st.header(f"Your take home salary would be ${ihs:.2f} with {Mab}%  deductions.")
+        if Inc > Aont:
+            st.subheader (f"Wow! You earn more than the average income ${Amab} of {Prov}")
+        else:
+            st.subheader (f"Your income is less than the average income ${Amab} of {Prov}. Time to upskill yourself! ") 
+
         
         
         

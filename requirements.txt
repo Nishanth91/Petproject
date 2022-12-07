@@ -3,3 +3,4 @@ pandas
 numpy
 tinydb
 emoji
+plotly.express

@@ -373,6 +373,7 @@ if selected == "Average Income":
     st.header("Average income across Canada")  
     url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/NAvg.csv'
     df = pd.read_csv(url,index_col=0)
+    st.write(df)
     st.subheader(" Household & Individual income - Provinces")
     df = pd.DataFrame(
         [["Alberta", 61865, 80449], ["British Columbia", 53416,72000],["Manitoba",49661,84130],["NFL",55508,82540],["Nova Scotia",48470,53000],["New Brunswick",49511,59000],["Ontario",55524,80322],["PEI",45912,78000],["Quebec",51735,87080],["Saskatchewan",54371,78000]],

@@ -370,7 +370,10 @@ if selected == "About Me":
 
 
 if selected == "Average Income":
-    st.subheader(" Household & Individual income in Canadian Provinces")
+    st.header("Average income across Canada")  
+    url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/NAvg.csv'
+    df = pd.read_csv(url,index_col=0)
+    st.subheader(" Household & Individual income - Provinces")
     df = pd.DataFrame(
         [["Alberta", 61865, 80449], ["British Columbia", 53416,72000],["Manitoba",49661,84130],["NFL",55508,82540],["Nova Scotia",48470,53000],["New Brunswick",49511,59000],["Ontario",55524,80322],["PEI",45912,78000],["Quebec",51735,87080],["Saskatchewan",54371,78000]],
         columns=["Provinces", "Average Individual Income", "Average Household Income"]
@@ -378,20 +381,20 @@ if selected == "Average Income":
     fig = px.bar(df, x="Provinces", y=["Average Household Income", "Average Individual Income"], barmode='group', height=400)
     st.plotly_chart(fig)
 
-    st.subheader("Household income by cities")
+    st.subheader("Household income - Cities")
     df2 = pd.DataFrame(
         [["Edmonton", 97800], ["Vancouver", 80000],["Winnipeg",79813],["St.John",59000],["Halifax",55000],["Fredericton",60000],["Toronto",78373],["Charlottetown",78000],["Montreal",82589],["Regina",81000]],
-        columns=["Provinces", "Average Household Income"]
+        columns=["Cities", "Average Household Income"]
     )
-    fig2 = px.bar(df2, x="Provinces", y="Average Household Income", barmode='group', height=400)
+    fig2 = px.bar(df2, x="Cities", y="Average Household Income", barmode='group', height=400)
     st.plotly_chart(fig2)
 
-    st.subheader("Individual income in Canadian Territories")
+    st.subheader("Individual income - Territories")
     df1 = pd.DataFrame(
         [["Yukon", 61812], ["Nunavut", 87355],["Northwest Territories",77670]],
-        columns=["Provinces", "Average Individual Income"]
+        columns=["Territorries", "Average Individual Income"]
     )
-    fig1 = px.bar(df1, x="Provinces", y="Average Individual Income", barmode='group', height=400)
+    fig1 = px.bar(df1, x="Territorries", y="Average Individual Income", barmode='group', height=400)
     st.plotly_chart(fig1)
      
 if selected == "Tax":

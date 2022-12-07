@@ -419,11 +419,6 @@ if selected == "Tax":
   Nfl = 34.8
 
 
-  chart_data = pd.DataFrame(
-    pd.read_csv('https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/average.csv')
-    columns=['Avg Individual Income', 'Avg Household Income'])
-  st.line_chart(chart_data)
-
   Name = st.text_input("Enter your name : ")
   Prov = st.selectbox('Select a province that you work for: ', ('Choose from dropdown 🔽','Ontario','Manitoba','Saskatchewan','Alberta','British Columbia','Quebec','Nfl & Labrador','New Brunswick','Prince Edward Island','Nova Scotia'))
   time.sleep(0.5)

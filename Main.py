@@ -369,7 +369,7 @@ if selected == "About Me":
      st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish.jpg",width=250)
 
 
-if selected == "Average Income"
+if selected == "Average Income":
     st.subheader(" Household & Individual income in Canadian Provinces")
     df = pd.DataFrame(
         [["Alberta", 61865, 80449], ["British Columbia", 53416,72000],["Manitoba",49661,84130],["NFL",55508,82540],["Nova Scotia",48470,53000],["New Brunswick",49511,59000],["Ontario",55524,80322],["PEI",45912,78000],["Quebec",51735,87080],["Saskatchewan",54371,78000]],

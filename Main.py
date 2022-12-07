@@ -371,6 +371,10 @@ if selected == "About Me":
 
 if selected == "Average Income":
     st.header("Average income across Canada")  
+    st.text('The average household hourly rate in Canada is **$36.28** and has remained relatively consistent in **2022**. That number if multiplied by 8-hour brings the average household daily wage to **$290.20** or **$1,451** average household weekly wage. This means that the average household bi-weekly salary is around **$2,902**, the average household monthly salary around **$6,287.67**.')
+      
+      #This equates to an annual average household income of a little over $75,452. Do keep in mind that factors such as longer or shorter work hours play a big role in how these numbers are calculated. Salary growth is projected to be on the rise, with most Canadian, middle class employees earning more than they did a year ago.
+    
     url='https://raw.githubusercontent.com/Nishanth91/Petproject/main/csv/NAvg.csv'
     df = pd.read_csv(url,index_col=0)
     st.write(df)

@@ -637,7 +637,7 @@ if selected == "Tax Calculator":
           st.write(f"__${EI:,}__")
           st.write(f"__${Fed:,.2f}__")
           st.write(f"__${Stt:,.2f}__")
-          st.write(f"__${Inhand:,2f}__")
+          st.write(f"__${Inhand:,.2f}__")
           st.write(f" __${Deductions:,.2f}__")
           if Pay == 'Monthly':
               st.write(f"__${Monthly:,.2f}__")

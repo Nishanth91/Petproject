@@ -422,7 +422,7 @@ if selected == "Average Income":
     st.plotly_chart(fig1)
      
 if selected == "Tax Calculator":
-  st.markdown("<h1 style='text-align: center; color: red;'>Income Tax calculator - Canada</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: center; color: red;'>Income Tax calculator - Canada (2022)</h1>", unsafe_allow_html=True)
   #st.title("Income Tax calculator - Canada")
   
   Province = st.selectbox('Select a Province or Territorry that you work for: ', ('Choose from dropdown ▼','Ontario','Manitoba','Saskatchewan','Alberta','British Columbia','Quebec','Newfoundland & Labrador','New Brunswick','Prince Edward Island','Nova Scotia','Yukon','Northwest Territories','Nunavut'))

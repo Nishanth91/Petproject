@@ -33,8 +33,8 @@ with st.sidebar:
   selected = option_menu(
    menu_title="Main Menu",
    options=["Canada","Regions","Average Income","Tax Calculator","Gallery","Feedback","About Me"],
-   icons=["sunrise","signpost-2","currency-exchange","folder-fill","camera-fill","mailbox","file-earmark-person"],
-   menu_icon="shop",
+   icons=["sunrise","signpost-2","currency-exchange","folder-fill","card-image","mailbox","file-earmark-person"],
+   menu_icon="markdown-fill",
    default_index=0,
   )
   
@@ -678,5 +678,4 @@ if selected == "Gallery":
       div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap"},
       img_style={"margin": "5px", "height": "200px"},
   )
-
   st.markdown(f"{clicked}")

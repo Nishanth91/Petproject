@@ -421,7 +421,7 @@ if selected == "Average Income":
      
 if selected == "Tax Calculator":
   st.markdown("<h1 style='text-align: center; color: red;'>Income Tax calculator - Canada</h1>", unsafe_allow_html=True)
-  st.title("Income Tax calculator - Canada")
+  #st.title("Income Tax calculator - Canada")
   
   Province = st.selectbox('Select a Province or Territorry that you work for: ', ('Choose from dropdown ▼','Ontario','Manitoba','Saskatchewan','Alberta','British Columbia','Quebec','Newfoundland & Labrador','New Brunswick','Prince Edward Island','Nova Scotia','Yukon','Northwest Territories','Nunavut'))
   Inc = st.number_input("Enter your annual gross income in CAD: ")
@@ -637,7 +637,7 @@ if selected == "Tax Calculator":
           st.write(f"__${EI}__")
           st.write(f"__${Fed:.2f}__")
           st.write(f"__${Stt:.2f}__")
-          st.write(f"__${Inhand:.2f}__")
+          st.write(f"__${Inhand:,}__")
           st.write(f" __${Deductions:.2f}__")
           if Pay == 'Monthly':
               st.write(f"__${Monthly:.2f}__")

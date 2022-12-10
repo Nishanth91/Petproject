@@ -21,7 +21,7 @@ st. set_page_config(layout="wide", page_icon=img, page_title='Nishanth CANADA' )
 #To remove Streamlit header & Footer
 hide_menu_style = """
         <style>
-        MainMenu {visibility: hidden; }
+        #MainMenu {visibility: hidden; }
         footer {visibility: hidden; }
         </style>
         """

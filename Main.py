@@ -9,6 +9,7 @@ import emoji
 import math
 from streamlit_option_menu import option_menu
 from PIL import Image 
+from st_clickable_images import clickable_images
 
 #from tinydb import TinyDB Disabled data collect functionality
 #db = TinyDB ('collected_data.json')
@@ -31,8 +32,8 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 with st.sidebar:
   selected = option_menu(
    menu_title="Main Menu",
-   options=["Canada","Regions","Average Income","Tax Calculator","Feedback","About Me"],
-   icons=["sunrise","signpost-2","currency-exchange","folder-fill","mailbox","file-earmark-person"],
+   options=["Canada","Regions","Average Income","Tax Calculator","Gallery","Feedback","About Me"],
+   icons=["sunrise","signpost-2","currency-exchange","folder-fill","camera-fill","mailbox","file-earmark-person"],
    menu_icon="shop",
    default_index=0,
   )
@@ -659,3 +660,23 @@ if selected == "About Me":
      st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish1.jpg",width=250)
      st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish2.jpg",width=250)
   
+  
+if selected == "Gallery":
+  clicked = clickable_images(
+      [
+          "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall1.jpg",
+          "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall2.jpg",
+          "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall3.jpg",
+          "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall4.jpg",
+          "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall5.jpg",
+          "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall6.jpg",
+          "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall7.jpg",
+          "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall8.jpg",
+          "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall9.jpg",
+      ],
+      titles=[f"Image #{str(i)}" for i in range(5)],
+      div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap"},
+      img_style={"margin": "5px", "height": "200px"},
+  )
+
+  st.markdown(f"Image #{clicked} clicked" if clicked > -1 else "No image clicked")

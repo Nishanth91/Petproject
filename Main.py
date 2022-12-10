@@ -14,9 +14,9 @@ from PIL import Image
 #db = TinyDB ('collected_data.json')
 
 #To set page title
-set_page_title("Canada Perks Nishanth")
+#set_page_title("Canada Perks Nishanth")
 img= Image.open('img/nish1.jpg')
-st. set_page_config(layout="wide", page_icon=img,page_title='Canada Perks Nishanth' ) 
+st. set_page_config(layout="wide", page_icon=img, page_title='Canada Perks Nishanth' ) 
 
 #To remove Streamlit header & Footer
 hide_menu_style = """

@@ -343,10 +343,7 @@ if selected == "Canada":
     """
 
 if selected == "Feedback":
-    #st.subheader("Do you like my website?")
-    select = st.radio("Do you like my website?", ('Yes','No','Maybe'),disabled=True, horizontal=True,)
-    #st.write('<style> div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
-    #if select:
+    select = st.radio("Do you like my website?", ('Yes','No','Maybe'), horizontal=True,)
     if select == "Yes":
       st.subheader("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
     if select == "No":

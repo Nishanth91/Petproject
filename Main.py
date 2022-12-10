@@ -20,7 +20,7 @@ st. set_page_config(layout="wide",page_title='Canada-perks-nish')
 #To remove Streamlit header & Footer
 hide_menu_style = """
         <style>
-        MainMenu {visibility: hidden; }
+        #MainMenu {visibility: hidden; }
         footer {visibility: hidden; }
         </style>
         """

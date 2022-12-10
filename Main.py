@@ -333,7 +333,7 @@ if selected == "Canada":
     st.map(df)
     
     """
-    Canada is a country in North America. Its ten provinces and three territories extend from the Atlantic Ocean to the Pacific Ocean and northward into the Arctic Ocean, covering over 9.98 million square kilometres (3.85 million square miles), making it the world's second-largest country by total area. Its southern and western border with the United States, stretching 8,891 kilometres (5,525 mi), is the world's longest binational land border. Canada's capital is Ottawa, and its three largest metropolitan areas are Toronto, Montreal, and Vancouver.
+    Canada is a country in North America popularly referred as the *__Great White North". Its ten provinces and three territories extend from the Atlantic Ocean to the Pacific Ocean and northward into the Arctic Ocean, covering over __9.98 million square kilometres__ (3.85 million square miles), making it the world's second-largest country by total area. Its southern and western border with the United States, stretching 8,891 kilometres (__5,525 mi__), is the world's longest binational land border. Canada's capital is Ottawa, and its three largest metropolitan areas are Toronto, Montreal, and Vancouver.
 
     Indigenous peoples have continuously inhabited what is now Canada for thousands of years. Beginning in the 16th century, British and French expeditions explored and later settled along the Atlantic coast. As a consequence of various armed conflicts, France ceded nearly all of its colonies in North America in 1763. In 1867, with the union of three British North American colonies through Confederation, Canada was formed as a federal dominion of four provinces. This began an accretion of provinces and territories and a process of increasing autonomy from the United Kingdom. This widening autonomy was highlighted by the Statute of Westminster 1931 and culminated in the Canada Act 1982, which severed the vestiges of legal dependence on the Parliament of the United Kingdom.
 
@@ -347,7 +347,7 @@ if selected == "Feedback":
     if select == "Yes":
       st.subheader("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
     if select == "No":
-      st.subheader("\N{unamused face} Sorry to know! We will try our best to improve this project") 
+      st.subheader("\N{unamused face} Sorry to know! I will try my best to improve this project") 
     if select =="Maybe":
       st.subheader(" 👍 Feel free to write and share your experience & improvements")
     

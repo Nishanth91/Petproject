@@ -14,34 +14,9 @@ from PIL import Image
 #db = TinyDB ('collected_data.json')
 
 #To set page title
-def set_page_title(title):
-    st.sidebar.markdown(unsafe_allow_html=True, body=f"""
-        <iframe height=0 srcdoc="<script>
-            const title = window.parent.document.querySelector('title') \
-                
-            const oldObserver = window.parent.titleObserver
-            if (oldObserver) {{
-                oldObserver.disconnect()
-            }} \
-
-            const newObserver = new MutationObserver(function(mutations) {{
-                const target = mutations[0].target
-                if (target.text !== '{title}') {{
-                    target.text = '{title}'
-                }}
-            }}) \
-
-            newObserver.observe(title, {{ childList: true }})
-            window.parent.titleObserver = newObserver \
-
-            title.text = '{title}'
-        </script>" />
-    """)
 set_page_title("Canada Perks Nishanth")
-#
 img= Image.open('img/nish1.jpg')
-st. set_page_config(layout="wide", page_icon=img,page_title='Canada-perks-nish' ) 
-#page_title='Canada-perks-nish',
+st. set_page_config(layout="wide", page_icon=img,page_title='Canada Perks Nishanth' ) 
 
 #To remove Streamlit header & Footer
 hide_menu_style = """

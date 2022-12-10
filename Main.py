@@ -15,8 +15,8 @@ from PIL import Image
 
 #To set page title
 #set_page_title("Canada Perks Nishanth")
-img= Image.open('img/can.jpg')
-st. set_page_config(layout="wide", page_icon=img, page_title='Nish in CAN' ) 
+img= Image.open('img/can1.jpg')
+st. set_page_config(layout="wide", page_icon=img, page_title='Nishanth CAN' ) 
 
 #To remove Streamlit header & Footer
 hide_menu_style = """

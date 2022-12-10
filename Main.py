@@ -39,8 +39,8 @@ def set_page_title(title):
     """)
 set_page_title("Canada Perks Nishanth")
 
-img= Image.open('img/nish1.jpg')
-st. set_page_config(layout="wide", page_icon=img) 
+#img= Image.open('img/nish1.jpg')
+#st. set_page_config(layout="wide", page_icon=img) 
 #page_title='Canada-perks-nish',
 
 #To remove Streamlit header & Footer

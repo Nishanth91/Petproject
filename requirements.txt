@@ -6,3 +6,4 @@ emoji
 plotly.express
 matplotlib
 Image
+st_clickable_images

@@ -5,3 +5,4 @@ tinydb
 emoji
 plotly.express
 matplotlib
+Image

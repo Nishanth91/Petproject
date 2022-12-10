@@ -346,11 +346,11 @@ if selected == "Feedback":
     st.subheader("Do you like my website?")
     select = st.radio("", ('Yes','No','Maybe'))
     if select == "Yes":
-        st.write("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
+        st.subheader("\N{grinning face} Thank you. Hope you had fun. Do share it with friends!")
     if select == "No":
-        st.write("\N{unamused face} Sorry to know! We will try our best to improve this project") 
+        st.subheader("\N{unamused face} Sorry to know! We will try our best to improve this project") 
     if select =="Maybe":
-        st.write("Feel free to write and share your experience & improvements")
+        st.subheader("Feel free to write and share your experience & improvements")
     
     st.write("")    
     st.write("")

@@ -1,21 +1,35 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import matplotlib.pyplot as plt
+import time
 import numpy as np
 import os
 import emoji
-st. set_page_config(layout="wide")
 import math
 from streamlit_option_menu import option_menu
-import time
-from tinydb import TinyDB
-db = TinyDB ('collected_data.json')
+
+#from tinydb import TinyDB Disabled data collect functionality
+#db = TinyDB ('collected_data.json')
+
+#To set page title
+img= st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish1.jpg")
+st. set_page_config(layout="wide",page_title='Canada-perks-nish', page_icon=img)
+
+#To remove Streamlit header & Footer
+hide_menu_style = """
+        <style>
+        MainMenu {visibility: hidden; }
+        footer {visibility: hidden; }
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)        
 
 
 with st.sidebar:
   selected = option_menu(
    menu_title="Main Menu",
-   options=["Canada","Regions","Average Income","Tax","Feedback","About Me"],
+   options=["Canada","Regions","Average Income","Tax Calculator","Feedback","About Me"],
    icons=["sunrise","signpost-2","currency-exchange","folder-fill","mailbox","file-earmark-person"],
    menu_icon="shop",
    default_index=0,
@@ -404,65 +418,243 @@ if selected == "Average Income":
     fig1 = px.bar(df1, x="Territorries", y="Average Individual Income", barmode='group', height=400)
     st.plotly_chart(fig1)
      
-if selected == "Tax":
-    
+if selected == "Tax Calculator":
   st.markdown("<h1 style='text-align: center; color: red;'>Income Tax calculator - Canada</h1>", unsafe_allow_html=True)
+  st.title("Income Tax calculator - Canada")
+  
+  Province = st.selectbox('Select a Province or Territorry that you work for: ', ('Choose from dropdown ▼','Ontario','Manitoba','Saskatchewan','Alberta','British Columbia','Quebec','Newfoundland & Labrador','New Brunswick','Prince Edward Island','Nova Scotia','Yukon','Northwest Territories','Nunavut'))
+  Inc = st.number_input("Enter your annual gross income in CAD: ")
+  Pay=  st.selectbox('How are you getting paid?',('Select ▼','Monthly','Bi-weekly','Semi-monthly'))
+  time.sleep(0.1)
 
-  #st.title("Income Tax calculator - Canada")
-  """
-  In this form we collect following details and provide inhand salary deductions info,
-  * Name
-  * Province
-  * Annual salary
-  * Acknowledgement for data collection
-  """
+  #Pension & Employee Insurance contribution
+  if Inc < 65000:
+      CPP=(Inc * 5.26)/100
+      EI=(Inc * 1.46)/100
+  else:
+      CPP=3500 # max CCP per year 2022
+      EI=953 # max Employee contribution per year 2022
+      
+  #Federal tax calculation
+  #source - https://www.wealthsimple.com/en-ca/learn/tax-brackets-canada#how_to_identify_your_tax_bracket
+  if Inc <= 50197:
+      Fed= Inc * 0.15
+  elif  Inc > 50197 and Inc <= 100392:
+      Fed=((Inc - 50197) * 0.205) + 7530
+  elif Inc > 100392 and Inc <= 155625:
+      Fed=((Inc - 100392) * 0.26) + 17820
+  elif Inc > 155625 and Inc <= 221708:
+      Fed=((Inc - 155625) * 0.29) + 32180
+  elif Inc > 221708:
+      Fed=((Inc - 221708) * 0.33) + 51344
 
-  #State Tax Slabs
-  Ont = 32.2
-  Mab = 35.6
-  Bc  = 29.8
-  Alb = 31.7
-  Sas = 33.4
-  Que = 36.2
-  Pei=  36.1
-  Nbw = 35
-  Nfl = 34.8
+  #Provincial tax calculation
+  #source - https://www.moneysense.ca/save/taxes/tax-brackets-in-canada/
+  if Province == 'Ontario':
+      if Inc <= 46626:
+          Tx= Inc * 0.0505
+      elif  Inc > 46226 and Inc <= 92454:
+          Tx= ((Inc - 46626) * 0.0915) + 2334
+      elif Inc > 92454 and Inc <= 150000:
+          Tx= ((Inc- 92454)* 0.1116) + 6564
+      elif Inc > 150000 and Inc <= 220000:
+          Tx= ((Inc- 150000)* 0.1216) + 13006
+      elif Inc > 220000:
+          Tx=((Inc - 220000) * 0.1316) + 21518
+  #Surtax only for Ontario - https://www.moneysense.ca/save/taxes/tax-brackets-in-canada/#surtax
+      if Tx > 4991 and Tx <= 6387: 
+          Surt = Tx * 0.2
+          Stt = Tx + Surt
+      elif Tx > 6387:
+          Surt = ((Tx - 6387) * 0.36) + 1227  
+          Stt = Tx + Surt       
+
+  if Province == 'Alberta':
+      if Inc <= 131220:
+          Stt= Inc * 0.1
+      elif  Inc > 131220 and Inc <= 157464:
+          Stt= ((Inc- 131220)* 0.12) + 13122
+      elif Inc > 157464 and Inc <= 209952:
+          Stt= ((Inc- 157464)* 0.13) + 16271
+      elif Inc > 209952 and Inc <= 314928:
+          Stt= ((Inc- 209952)* 0.14) + 23094
+      elif Inc > 314928:
+          Stt=((Inc - 314928) * 0.15) + 37792
+          
+  if Province == 'British Columbia':
+      if Inc <= 43070:
+          Stt= Inc * 0.0506
+      elif  Inc > 43070 and Inc <= 86141:
+          Stt= ((Inc- 43070)* 0.077) + 2179
+      elif Inc > 86141 and Inc <= 98901:
+          Stt= ((Inc- 86141)* 0.105) + 5495
+      elif Inc > 98901 and Inc <= 120094:
+          Stt= ((Inc- 98901)* 0.1229) + 6835
+      elif Inc > 120094 and Inc <= 162832:
+          Stt= ((Inc- 120094)* 0.147) + 9440
+      elif Inc > 162832 and Inc <= 227091:
+          Stt= ((Inc- 209952)* 0.168) + 15722
+      elif Inc > 227091:
+          Stt=((Inc - 314928) * 0.205) + 26518        
+
+  if Province == 'Manitoba':
+      if Inc <= 34431:
+          Stt= Inc * 0.108
+      elif  Inc > 34431 and Inc <= 74416:
+          Stt= ((Inc- 34431)* 0.1275) + 3719
+      elif Inc > 74416:
+          Stt=((Inc - 74416) * 0.174) + 8817
+          
+  if Province == 'New Brunswick':
+      if Inc <= 44887:
+          Stt= Inc * 0.094
+      elif  Inc > 44887 and Inc <= 89775:
+          Stt= ((Inc- 44887)* 0.1482) + 4219
+      elif Inc > 89775 and Inc <= 145955:
+          Stt= ((Inc- 89775)* 0.1652) + 10871
+      elif Inc > 145955 and Inc <= 166280:
+          Stt= ((Inc- 209952)* 0.1784) + 20152
+      elif Inc > 166280:
+          Stt=((Inc - 166280) * 0.203) + 23778
+          
+  if Province == 'Newfoundland & Labrador':
+      if Inc <= 39147:
+          Stt= Inc * 0.087
+      elif  Inc > 39147 and Inc <= 78294:
+          Stt= ((Inc- 39147)* 0.145) + 3406
+      elif Inc > 78294 and Inc <= 139780:
+          Stt= ((Inc- 78294)* 0.158) + 9082
+      elif Inc > 139780 and Inc <= 195693:
+          Stt= ((Inc- 139780)* 0.178) + 18797
+      elif Inc > 195693 and Inc <= 250000:
+          Stt= ((Inc- 195693)* 0.198) + 28750
+      elif Inc > 250000 and Inc <= 500000:
+          Stt= ((Inc- 250000)* 0.208) + 39503
+      elif Inc > 500000 and Inc <= 1000000:
+          Stt= ((Inc- 500000)* 0.213) + 91503
+      elif Inc > 1000000:
+          Stt=((Inc - 1000000) * 0.218) + 158500
+          
+  if Province == 'Northwest Territories':
+      if Inc <= 45462:
+          Stt= Inc * 0.059
+      elif  Inc > 45462 and Inc <= 90927:
+          Stt= ((Inc- 45462)* 0.086) + 2682
+      elif Inc > 90927 and Inc <= 147826:
+          Stt= ((Inc- 90927)* 0.122) + 6592
+      elif Inc > 147826:
+          Stt=((Inc - 147826) * 0.1405) + 13534
+
+  if Province == 'Nunavut':
+      if Inc <= 29590:
+          Stt= Inc * 0.0879
+      elif  Inc > 29590 and Inc <= 59180:
+          Stt= ((Inc- 29590)* 0.1495) + 2601
+      elif Inc > 59180 and Inc <= 93000:
+          Stt= ((Inc- 59180)* 0.1667) + 7025
+      elif Inc > 150000:
+          Stt=((Inc - 150000) * 0.21) + 22638
+          
+  if Province == 'Nova Scotia':
+      if Inc <= 47862:
+          Stt= Inc * 0.04
+      elif  Inc > 47862 and Inc <= 95724:
+          Stt= ((Inc- 47862)* 0.07) + 1914
+      elif Inc > 95724 and Inc <= 155625:
+          Stt= ((Inc- 95724)* 0.09) + 5264
+      elif Inc > 155625:
+          Stt=((Inc - 155625) * 0.115) + 10655
+          
+  if Province == 'Prince Edward island':
+      if Inc <= 31984:
+          Tx1= Inc * 0.098
+      elif  Inc > 31984 and Inc <= 63969:
+          Tx1= ((Inc- 31984)* 0.138) + 3134
+      elif Inc > 63969:
+          Tx1=((Inc - 63969) * 0.167) + 7548
+      if Tx1 > 12500:
+          Surt = Tx1 * 0.1
+          Stt = Tx1 + Surt     
+              
+          
+  if Province == 'Quebec':
+      if Inc <= 46295:
+          Stt= Inc * 0.15
+      elif  Inc > 46295 and Inc <= 92580:
+          Stt= ((Inc- 46295)* 0.2) + 6944
+      elif Inc > 92580 and Inc <= 112655:
+          Stt= ((Inc- 92580)* 0.24) + 16201
+      elif Inc > 112655:
+          Stt=((Inc - 112655) * 0.2575) + 21019
+          
+  if Province == 'Saskatchewan':
+      if Inc <= 46773:
+          Stt= Inc * 0.105
+      elif  Inc > 46773 and Inc <= 133638:
+          Stt= ((Inc- 46773)* 0.125) + 4911
+      elif Inc > 133638:
+          Stt=((Inc - 133638) * 0.145) + 15769
+          
+  if Province == 'Yukon':
+      if Inc <= 50197:
+          Stt= Inc * 0.064
+      elif  Inc > 50197 and Inc <= 100392:
+          Stt= ((Inc- 50197)* 0.09) + 3213
+      elif Inc > 100392 and Inc <= 155625:
+          Stt= ((Inc- 100392)* 0.109) + 7731
+      elif Inc > 155625 and Inc <= 500000:
+          Stt= ((Inc- 155625)* 0.128) + 13751
+      elif Inc > 500000:
+          Stt=((Inc - 500000) * 0.15) + 57831
+          
+  if Province =='Select ▼':
+      st.subheader("Select a Province or Territory to calculate taxes")
+
+  if Inc and Province:
+      st.subheader (f"*__Approx Tax calculation for {Province} - 2022__*",)
+      Deductions = Stt + CPP + EI + Fed
+      Inhand= Inc - Deductions
+      Monthly= Inhand/12
+      col1, col2 = st.columns([4,4])
+      with col1:
+          st.write("Gross pay")                
+          st.write("Canada Pension plan")      
+          st.write("Employee Insurance")       
+          st.write("Federal Tax")              
+          st.write("Provincial Tax")   
+          st.write("Net Pay")                  
+          st.write("Total deductions") 
+          if Pay == 'Monthly':
+              st.write("Monthly pay after Taxes")  
+          elif Pay == 'Bi-weekly':
+              st.write("Bi Weekly pay after Taxes")
+          elif Pay == 'Semi-monthly':
+              st.write("Semi Monthly pay after Taxes")
+      with col2:
+          st.write(f"__💰{Inc:.0f}__")
+          st.write(f"__${CPP}__")
+          st.write(f"__${EI}__")
+          st.write(f"__${Fed:.2f}__")
+          st.write(f"__${Stt:.2f}__")
+          st.write(f"__${Inhand:.2f}__")
+          st.write(f" __${Deductions:.2f}__")
+          if Pay == 'Monthly':
+              st.write(f"__${Monthly:.2f}__")
+          elif Pay == 'Bi-weekly':
+              sal = Inhand/26
+              st.write(f"__${sal:.2f}__")
+          elif Pay == 'Semi-monthly':
+              sal = Inhand/24
+              st.write(f"__${sal:.2f}__")  
+  
+      labels = 'EI', 'Provincial Tax', 'Net Pay', 'CPP','Federal tax'
+      sizes = [EI, Stt, Inhand, CPP, Fed]
+      explode = (0, 0, 0.1, 0, 0) 
+      fig1, ax1 = plt.subplots()
+      ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
+      ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+      st.pyplot(fig1)
 
 
-  Name = st.text_input("Enter your name : ")
-  Prov = st.selectbox('Select a province that you work for: ', ('Choose from dropdown 🔽','Ontario','Manitoba','Saskatchewan','Alberta','British Columbia','Quebec','Nfl & Labrador','New Brunswick','Prince Edward Island','Nova Scotia'))
-  time.sleep(0.5)
-  st.write ('You have selected:', Prov)
-  Age= st.slider("Choose your age: ")
-  Inc = st.number_input("Enter you annual gross income in CAD: ")
-  print()
-  Coll= st.checkbox("Can we collect your data")
-  print()
 
-  if Name and Prov and Age and Inc:
-      st.write (f"Hi {Name}! Welcome to my calculator app")
-      db.insert({
-          'Name':Name,
-          'Prov':Prov,
-          'Age':Age,
-          'Inc':Inc
-      })
-
-#  if Prov == 'Ontario':
-#    ihs = Inc * (100 - Ont) / 100
-#    if Name and Prov and Inc:
-        
-  if Prov == 'Manitoba':
-    ihs = Inc * (100 - Ont) / 100
-    if Name and Prov and Inc:
-        st.header(f"Your take home salary would be ${ihs:.2f} with {Mab}%  deductions.")
-        if Inc > Aont:
-            st.subheader (f"Wow! You earn more than the average income ${Amab} of {Prov}")
-        else:
-            st.subheader (f"Your income is less than the average income ${Amab} of {Prov}. Time to upskill yourself! ") 
-
-        
-        
-        
-    
-    
+  

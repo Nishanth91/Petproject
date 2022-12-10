@@ -4,3 +4,4 @@ numpy
 tinydb
 emoji
 plotly.express
+matplotlib

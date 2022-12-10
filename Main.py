@@ -632,21 +632,21 @@ if selected == "Tax Calculator":
           elif Pay == 'Semi-monthly':
               st.write("Semi Monthly pay after Taxes")
       with col2:
-          st.write(f"__💰{Inc:.0f}__")
-          st.write(f"__${CPP}__")
-          st.write(f"__${EI}__")
-          st.write(f"__${Fed:.2f}__")
-          st.write(f"__${Stt:.2f}__")
-          st.write(f"__${Inhand:,}__")
-          st.write(f" __${Deductions:.2f}__")
+          st.write(f"__💰{Inc:,.0f}__")
+          st.write(f"__${CPP:,}__")
+          st.write(f"__${EI:,}__")
+          st.write(f"__${Fed:,.2f}__")
+          st.write(f"__${Stt:,.2f}__")
+          st.write(f"__${Inhand:,2f}__")
+          st.write(f" __${Deductions:,.2f}__")
           if Pay == 'Monthly':
-              st.write(f"__${Monthly:.2f}__")
+              st.write(f"__${Monthly:,.2f}__")
           elif Pay == 'Bi-weekly':
               sal = Inhand/26
-              st.write(f"__${sal:.2f}__")
+              st.write(f"__${sal:,.2f}__")
           elif Pay == 'Semi-monthly':
               sal = Inhand/24
-              st.write(f"__${sal:.2f}__")  
+              st.write(f"__${sal:,.2f}__")  
   
       labels = 'EI', 'Provincial Tax', 'Net Pay', 'CPP','Federal tax'
       sizes = [EI, Stt, Inhand, CPP, Fed]

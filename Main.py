@@ -355,7 +355,7 @@ if selected == "Feedback":
     
     st.write("")    
     st.write("")
-    st.subheader(":mailbox: Get In Touch With Me!")
+    st.subheader(":mailbox: *Get In Touch With Me!*")
     contact_form = """
     <form action="https://formsubmit.co/NISHANTH91.DBA@GMAIL.COM" method="POST">
         <input type="hidden" name="_captcha" value="false">

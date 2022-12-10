@@ -13,8 +13,9 @@ from streamlit_option_menu import option_menu
 #db = TinyDB ('collected_data.json')
 
 #To set page title
-img= st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish1.jpg")
-st. set_page_config(layout="wide",page_title='Canada-perks-nish', page_icon=img)
+#img= st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish1.jpg")
+st. set_page_config(layout="wide",page_title='Canada-perks-nish') 
+                    #page_icon=img)
 
 #To remove Streamlit header & Footer
 hide_menu_style = """

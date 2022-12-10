@@ -375,16 +375,6 @@ if selected == "Feedback":
 
     local_css("style/style.css")
     
-if selected == "About Me":
-    col1, col2 = st.columns([4,2])
-
-    with col1:
-     st.header("Hey there! I'm Nishanth.")
-     st.subheader("I'm an Oracle database administrator & Devops admin. Also a newbee in python programming & Devops beginner")    
-     st.write("App work in progress, not complete yet")
-    with col2:
-     st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish1.jpg",width=250)
-
 
 if selected == "Average Income":
     st.header("Average income across Canada")  
@@ -618,7 +608,7 @@ if selected == "Tax Calculator":
       Deductions = Stt + CPP + EI + Fed
       Inhand= Inc - Deductions
       Monthly= Inhand/12
-      col1, col2 = st.columns([4,4])
+      col1, col2 = st.columns([3,3])
       with col1:
           st.write("Gross pay")                
           st.write("Canada Pension plan")      
@@ -658,6 +648,14 @@ if selected == "Tax Calculator":
       ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
       st.pyplot(fig1)
 
+if selected == "About Me":
+    col1, col2 = st.columns([4,2])
 
-
+    with col1:
+     st.header("Hey there! I'm Nishanth.")
+     st.subheader("I'm an Oracle database administrator & Devops admin. Also a newbee in python programming & Devops beginner")    
+     st.write("App work in progress, not complete yet")
+    with col2:
+     st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish1.jpg",width=250)
+     st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish2.jpg",width=250)
   

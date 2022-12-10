@@ -15,8 +15,8 @@ from PIL import Image
 
 #To set page title
 #set_page_title("Canada Perks Nishanth")
-img= Image.open('img/nish1.jpg')
-st. set_page_config(layout="wide", page_icon=img, page_title='Canada Perks Nishanth' ) 
+img= Image.open('img/can.jpg')
+st. set_page_config(layout="wide", page_icon=img, page_title='Nish in CAN' ) 
 
 #To remove Streamlit header & Footer
 hide_menu_style = """
@@ -383,7 +383,7 @@ if selected == "About Me":
      st.subheader("I'm an Oracle database administrator & Devops admin. Also a newbee in python programming & Devops beginner")    
      st.write("App work in progress, not complete yet")
     with col2:
-     st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish.jpg",width=250)
+     st.image("https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/nish1.jpg",width=250)
 
 
 if selected == "Average Income":

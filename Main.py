@@ -674,7 +674,7 @@ if selected == "Gallery":
           "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall8.jpg",
           "https://raw.githubusercontent.com/Nishanth91/Petproject/main/img/gall9.jpg",
       ],
-      titles=[f"Image #{str(i)}" for i in range(5)],
+      #titles=[f"Image #{str(i)}" for i in range(5)],
       div_style={"display": "flex", "justify-content": "center", "flex-wrap": "wrap"},
       img_style={"margin": "5px", "height": "200px"},
   )
